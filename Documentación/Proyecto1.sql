@@ -253,8 +253,7 @@ INSERT INTO ControlVenta.Factura VALUES ('F2','E16','SUSU4','0000000000001','202
 INSERT INTO ControlVenta.Factura VALUES ('F3','E17','SUSU4','8240085741332','2023/3/9',7999.00);
 INSERT INTO ControlVenta.Factura VALUES ('F4','E13','SUN0','0000000000001','2023/3/9',7999.00);
 INSERT INTO ControlVenta.Factura VALUES ('F5','E13','SUN0','1092153719388','2023/3/9',7999.00);
-INSERT INTO ControlVenta.Factura VALUES ('F6','E13','SUC3','9718279736257','2023/3/9',7999.00);
-
+INSERT INTO ControlVenta.Factura VALUES ('F6','E9','SUC3','9718279736257','2023/3/9',7999.00);
 /*INSERTS DE VENTAS*/
 INSERT INTO ControlVenta.Venta VALUES ('V1','F1','P2','1');
 INSERT INTO ControlVenta.Venta VALUES ('V2','F1','P28','1');
@@ -262,17 +261,40 @@ INSERT INTO ControlVenta.Venta VALUES ('V3','F2','P18','1');
 INSERT INTO ControlVenta.Venta VALUES ('V4','F3','P18','1');
 INSERT INTO ControlVenta.Venta VALUES ('V5','F4','P18','1');
 INSERT INTO ControlVenta.Venta VALUES ('V6','F5','P18','1');
+INSERT INTO ControlVenta.Venta VALUES ('V7','F6','P18','1');
 /*DESPUES DE AÑADIR, SE DEBE DESCONTAR DEL INVENTARIO DE CADA LUGAR, Y VERIFICAR SI HAY*/
 
-/*EXISTENCIA TOTALES DE PRODUCTOS EN TODAS LA TIENDAS*/
-SELECT s.nombre, p.nombre, p.marca, i.cantidad  FROM ControlProduct.Inventario AS i INNER JOIN ControlAdmin.Sucursal AS s ON i.cod_sucursal=s.codigo_id INNER JOIN ControlProduct.Producto AS p ON i.sku_producto=p.sku;
-/*EXISTENCIA TOTALES DE PRODUCTOS EN UNA TIENDA*/
-SELECT p.nombre, p.marca, i.cantidad  FROM ControlProduct.Inventario AS i INNER JOIN ControlProduct.Producto AS p ON i.sku_producto=p.sku AND i.cod_sucursal='SUN0';
 /*Top 10 productos más vendidos*/
 SELECT p.nombre, sum(v.cantidad) FROM ControlVenta.Venta AS v INNER JOIN ControlProduct.Producto AS p ON v.sku_producto=p.sku GROUP BY p.nombre ORDER BY sum(v.cantidad) DESC LIMIT 10;
 /*Top 10 clientes que más ganancias generan*/
 SELECT c.nombre, c.apellido, sum(f.total) FROM ControlVenta.Factura AS f INNER JOIN ControlAdmin.Cliente AS c ON f.nit_cliente=c.nit GROUP BY c.nombre, c.apellido ORDER BY sum(f.total) DESC LIMIT 10;
 /*Top 3 sucursales con más ventas*/
-SELECT s.nombre, count() FROM ControlVenta.Factura AS f INNER JOIN ControlAdmin.Sucursal AS s ON f.cod_sucursal=s.nombre GROUP BY s.nombre ORDER BY sum(f.total) DESC LIMIT 3;
+/*VISTA*/
+CREATE VIEW tab_cont_fact AS SELECT f.no_factura, count(*) FROM ControlVenta.Venta AS v INNER JOIN ControlVenta.Factura AS f ON v.num_factura=f.no_factura GROUP BY f.no_factura ORDER BY count(*) DESC;
+/*QUERY*/
+SELECT s.nombre, sum(t.count) FROM tab_cont_fact AS t INNER JOIN ControlVenta.Factura AS f ON t.no_factura = f.no_factura INNER JOIN ControlAdmin.Sucursal AS s ON f.cod_sucursal = s.codigo_id GROUP BY s.nombre ORDER BY sum(t.count) DESC LIMIT 3;
+/*Top 3 sucursales con más ingresos*/
+SELECT s.nombre, sum(f.total) FROM ControlVenta.Factura AS f INNER JOIN ControlAdmin.Sucursal AS s ON f.cod_sucursal=s.codigo_id GROUP BY s.nombre ORDER BY sum(f.total) DESC LIMIT 3;
+/*Top 3 empleados con mas ventas*/
+SELECT e.cod_empleado ,e.nombre, sum(t.count) FROM tab_cont_fact AS t INNER JOIN ControlVenta.Factura AS f ON t.no_factura = f.no_factura INNER JOIN ControlAdmin.Empleado AS e ON f.cod_vendedor = e.cod_empleado GROUP BY e.nombre, e.cod_empleado ORDER BY sum(t.count) DESC LIMIT 3;
+/*Top 3 empleados con mas ingresos*/
+SELECT e.nombre, sum(f.total) FROM ControlVenta.Factura AS f INNER JOIN ControlAdmin.Empleado AS e ON f.cod_vendedor=e.cod_empleado GROUP BY e.nombre ORDER BY sum(f.total) DESC LIMIT 3;
+/*Top 10 productos más vendidos.*/
+SELECT p.nombre, count(*) FROM ControlVenta.Venta AS v INNER JOIN ControlProduct.Producto AS p ON v.sku_producto=p.sku GROUP BY p.nombre ORDER BY count(*) DESC LIMIT 10;
+/*Top 10 productos con más ingresos*/
+SELECT p.nombre, sum(p.precio) FROM ControlVenta.Venta AS v INNER JOIN ControlProduct.Producto AS p ON v.sku_producto=p.sku GROUP BY p.nombre ORDER BY sum(p.precio) DESC LIMIT 10;
+/*Top 10 productos más vendidos.*/
+SELECT p.nombre, count(*) FROM ControlVenta.Venta AS v INNER JOIN ControlProduct.Producto AS p ON v.sku_producto=p.sku GROUP BY p.nombre ORDER BY count(*) DESC LIMIT 10;
+/*Top 10 productos con más ingresos*/
+SELECT p.nombre, sum(p.precio) FROM ControlVenta.Venta AS v INNER JOIN ControlProduct.Producto AS p ON v.sku_producto=p.sku GROUP BY p.nombre ORDER BY sum(p.precio) DESC LIMIT 10;
+/*Top 5 productos más vendidos por sucursal*/
+SELECT p.nombre, count(*) FROM ControlVenta.Venta AS v INNER JOIN ControlProduct.Producto AS p ON v.sku_producto=p.sku INNER JOIN ControlVenta.Factura AS f ON v.num_factura=f.no_factura AND f.cod_sucursal='SUC3' GROUP BY p.nombre ORDER BY count(*) DESC LIMIT 5;
+/*Top 5 productos con más ingresos por sucursal*/
+SELECT p.nombre, sum(p.precio) FROM ControlVenta.Venta AS v INNER JOIN ControlProduct.Producto AS p ON v.sku_producto=p.sku INNER JOIN ControlVenta.Factura AS f ON v.num_factura=f.no_factura AND f.cod_sucursal='SUSU4' GROUP BY p.nombre ORDER BY sum(p.precio) DESC LIMIT 10;
+
+/*EXISTENCIA TOTALES DE PRODUCTOS EN TODAS LA TIENDAS*/
+SELECT s.nombre, p.nombre, p.marca, i.cantidad  FROM ControlProduct.Inventario AS i INNER JOIN ControlAdmin.Sucursal AS s ON i.cod_sucursal=s.codigo_id INNER JOIN ControlProduct.Producto AS p ON i.sku_producto=p.sku;
+/*EXISTENCIA TOTALES DE PRODUCTOS EN UNA TIENDA*/
+SELECT p.nombre, p.marca, i.cantidad  FROM ControlProduct.Inventario AS i INNER JOIN ControlProduct.Producto AS p ON i.sku_producto=p.sku AND i.cod_sucursal='SUN0';
 
 
