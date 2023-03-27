@@ -14,8 +14,8 @@ import java.sql.DriverManager;
 public class Conexion {
     public static Connection dbConection;
     String url = "jdbc:postgresql://localhost:5432/electronic_homesp1";
-    String user = "postgres";
-    String pswrd = "meia19";
+    String user = "adminehp1";
+    String pswrd = "admin123";
     
     public boolean initConexion(){
         try{
