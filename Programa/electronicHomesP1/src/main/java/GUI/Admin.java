@@ -4,16 +4,20 @@
  */
 package GUI;
 
+import Program.Principal;
+import javax.swing.JButton;
+import javax.swing.JTable;
+
 /**
  *
  * @author alex
  */
 public class Admin extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Admin
-     */
-    public Admin() {
+    private Principal p;
+
+    public Admin(Principal p) {
+        this.p = p;
         initComponents();
     }
 
@@ -39,10 +43,10 @@ public class Admin extends javax.swing.JFrame {
         agCliente = new javax.swing.JButton();
         seeReports = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        guardar = new javax.swing.JButton();
         jLabel30 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        table = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -77,12 +81,27 @@ public class Admin extends javax.swing.JFrame {
         jPanel38.add(agSucursal);
 
         agEmpleado.setText("AGREGAR EMPLEADO");
+        agEmpleado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                agEmpleadoActionPerformed(evt);
+            }
+        });
         jPanel38.add(agEmpleado);
 
         agCliente.setText("AGREGAR CLIENTE");
+        agCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                agClienteActionPerformed(evt);
+            }
+        });
         jPanel38.add(agCliente);
 
         seeReports.setText("REPORTES");
+        seeReports.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                seeReportsActionPerformed(evt);
+            }
+        });
         jPanel38.add(seeReports);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -98,8 +117,13 @@ public class Admin extends javax.swing.JFrame {
 
         jPanel38.add(jPanel1);
 
-        jButton1.setText("GUARDAR");
-        jPanel38.add(jButton1);
+        guardar.setText("GUARDAR");
+        guardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                guardarActionPerformed(evt);
+            }
+        });
+        jPanel38.add(guardar);
 
         jPanel14.add(jPanel38, java.awt.BorderLayout.CENTER);
 
@@ -108,7 +132,7 @@ public class Admin extends javax.swing.JFrame {
         jLabel30.setText(" ");
         jPanel13.add(jLabel30, java.awt.BorderLayout.PAGE_START);
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -119,7 +143,7 @@ public class Admin extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane2.setViewportView(table);
 
         jPanel13.add(jScrollPane2, java.awt.BorderLayout.CENTER);
 
@@ -129,15 +153,63 @@ public class Admin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void agSucursalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agSucursalActionPerformed
-        //llenar casillas
+        p.getCtrlAdmin().agData("agSucursal");
     }//GEN-LAST:event_agSucursalActionPerformed
+
+    private void agEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agEmpleadoActionPerformed
+        p.getCtrlAdmin().agData("agEmpleado");
+    }//GEN-LAST:event_agEmpleadoActionPerformed
+
+    private void agClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agClienteActionPerformed
+        p.getCtrlAdmin().agData("agClilente");
+    }//GEN-LAST:event_agClienteActionPerformed
+
+    private void seeReportsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seeReportsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_seeReportsActionPerformed
+
+    private void guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarActionPerformed
+        p.getCtrlAdmin().savedInfo();
+    }//GEN-LAST:event_guardarActionPerformed
+
+    public JTable getTable() {
+        return table;
+    }
+
+    public void setTable(JTable table) {
+        this.table = table;
+    }
+
+    public JButton getAgCliente() {
+        return agCliente;
+    }
+
+    public void setAgCliente(JButton agCliente) {
+        this.agCliente = agCliente;
+    }
+
+    public JButton getAgEmpleado() {
+        return agEmpleado;
+    }
+
+    public void setAgEmpleado(JButton agEmpleado) {
+        this.agEmpleado = agEmpleado;
+    }
+
+    public JButton getAgSucursal() {
+        return agSucursal;
+    }
+
+    public void setAgSucursal(JButton agSucursal) {
+        this.agSucursal = agSucursal;
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton agCliente;
     private javax.swing.JButton agEmpleado;
     private javax.swing.JButton agSucursal;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton guardar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
@@ -149,7 +221,7 @@ public class Admin extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel38;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable2;
     private javax.swing.JButton seeReports;
+    private javax.swing.JTable table;
     // End of variables declaration//GEN-END:variables
 }

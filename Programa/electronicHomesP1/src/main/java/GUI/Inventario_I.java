@@ -4,16 +4,17 @@
  */
 package GUI;
 
+import Program.Principal;
+
 /**
  *
  * @author alex
  */
 public class Inventario_I extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Inventario_I
-     */
-    public Inventario_I() {
+    private Principal p;
+    public Inventario_I(Principal p) {
+        this.p = p;
         initComponents();
     }
 

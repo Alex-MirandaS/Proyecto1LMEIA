@@ -13,6 +13,7 @@ import Program.Principal;
 public class Login extends javax.swing.JFrame {
 
     private Principal principal;
+
     public Login(Principal principal) {
         initComponents();
         this.principal = principal;
@@ -41,11 +42,11 @@ public class Login extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        cod = new javax.swing.JTextField();
         jPanel7 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        pass = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -131,6 +132,11 @@ public class Login extends javax.swing.JFrame {
         jPanel8.add(jPanel10);
 
         jButton1.setText("Ingresar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         jPanel8.add(jButton1);
 
         jPanel4.add(jPanel8, java.awt.BorderLayout.CENTER);
@@ -142,7 +148,7 @@ public class Login extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("CODIGO");
         jPanel5.add(jLabel1);
-        jPanel5.add(jTextField1);
+        jPanel5.add(cod);
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -173,15 +179,20 @@ public class Login extends javax.swing.JFrame {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("CONTRASEÑA");
         jPanel5.add(jLabel2);
-        jPanel5.add(jTextField2);
+        jPanel5.add(pass);
 
         getContentPane().add(jPanel5, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        principal.verifyAccess(cod.getText(), pass.getText());
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField cod;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -199,7 +210,6 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField pass;
     // End of variables declaration//GEN-END:variables
 }

@@ -14,9 +14,9 @@ import java.util.ArrayList;
  *
  * @author alex
  */
-public class EmpleadoCRUD1 extends ModelCRUD {
+public class EmpleadoCRUD extends ModelCRUD {
 
-    public EmpleadoCRUD1() {
+    public EmpleadoCRUD() {
         super("ControlAdmin.Empleado ");
     }
 

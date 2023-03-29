@@ -16,7 +16,7 @@ import java.util.ArrayList;
  */
 public class SucursalCRUD extends ModelCRUD {
 
-    public SucursalCRUD(String table) {
+    public SucursalCRUD() {
         super("ControlAdmin.Sucursal ");
     }
 
