@@ -4,7 +4,6 @@
  */
 package GUI;
 
-import Main.Principal;
 import javax.swing.JButton;
 
 /**
@@ -13,11 +12,11 @@ import javax.swing.JButton;
  */
 public class ReportesGUI extends javax.swing.JFrame {
 
-    private Principal principal;
+    //private Principal principal;
 
-    public ReportesGUI(Principal principal) {
+    public ReportesGUI() {
         initComponents();
-        this.principal = principal;
+//        this.principal = principal;
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }
@@ -179,23 +178,23 @@ public class ReportesGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void rErroresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rErroresActionPerformed
-        principal.reporteErrores();
+    //    principal.reporteErrores();
     }//GEN-LAST:event_rErroresActionPerformed
 
     private void rTokensActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rTokensActionPerformed
-       principal.reporteTokens();
+    //   principal.reporteTokens();
     }//GEN-LAST:event_rTokensActionPerformed
 
     private void rLexemasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rLexemasActionPerformed
-        principal.recuentoLexemas();
+      //  principal.recuentoLexemas();
     }//GEN-LAST:event_rLexemasActionPerformed
 
     private void rAFDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rAFDActionPerformed
-        principal.reporteAFD();
+        //principal.reporteAFD();
     }//GEN-LAST:event_rAFDActionPerformed
 
     private void analisisSintacticoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_analisisSintacticoActionPerformed
-        principal.analisisSintactico();
+       // principal.analisisSintactico();
     }//GEN-LAST:event_analisisSintacticoActionPerformed
 
     public JButton getrAFD() {

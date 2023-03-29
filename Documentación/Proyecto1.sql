@@ -7,13 +7,13 @@ CREATE SCHEMA ControlVenta;
 
 /*TABLAS*/
 
-CREATE TABLE ControlAdmin.Sucursal(
+CREATE TABLE ControlAdmin.Sucursal(/*FALTA*/
     codigo_id VARCHAR(8) NOT NULL,
     nombre VARCHAR (50) NOT NULL,
     PRIMARY KEY (codigo_id)
 );
 
-CREATE TABLE ControlAdmin.Empleado(
+CREATE TABLE ControlAdmin.Empleado(/*FALTA*/
     cod_empleado VARCHAR(8) NOT NULL,
     nombre VARCHAR (50) NOT NULL,
     contraseña VARCHAR (50) NOT NULL,
@@ -23,7 +23,7 @@ CREATE TABLE ControlAdmin.Empleado(
     FOREIGN KEY (cod_sucursal) REFERENCES ControlAdmin.Sucursal(codigo_id)
 );
 
-CREATE TABLE ControlAdmin.Cliente(
+CREATE TABLE ControlAdmin.Cliente(/*FALTA*/
     nit VARCHAR(13) NOT NULL,
     nombre VARCHAR (50) NOT NULL,
     apellido VARCHAR (50) NOT NULL,

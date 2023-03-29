@@ -5,6 +5,7 @@
 package Main;
 
 import Conexion.Conexion;
+import Program.Principal;
 import javax.swing.JOptionPane;
 
 /**
@@ -20,7 +21,8 @@ public class NewMain {
       
         Conexion con = new Conexion();
         if (con.initConexion()) {
-            
+            Principal principal = new Principal();
+            principal.start();
         }else{
             JOptionPane.showMessageDialog(null, "ERROR AL CONECTAR");
         }
