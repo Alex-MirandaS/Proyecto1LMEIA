@@ -15,11 +15,11 @@ import java.util.ArrayList;
  * @author alex
  */
 public class ProductoCRUD extends ModelCRUD {
-    
-    public ProductoCRUD(String table) {
-        super("ControlProduct.Producto ");
+
+    public ProductoCRUD() {
+        super("ControlProduct.Producto ", 6);
     }
-    
+
     @Override
     public boolean insert(Object o) {
         Producto temp = (Producto) o;
@@ -38,12 +38,12 @@ public class ProductoCRUD extends ModelCRUD {
             return false;
         }
     }
-    
+
     @Override
     public ArrayList<Object> seeAllData() {
         String consult = this.selectTQ + this.table;
         ArrayList<Object> returned = new ArrayList<>();
-        
+
         try ( PreparedStatement presSt = Conexion.dbConection.prepareStatement(consult)) {
             ResultSet result = presSt.executeQuery();
             Producto temp;
@@ -51,11 +51,54 @@ public class ProductoCRUD extends ModelCRUD {
                 temp = new Producto(result.getString("sku"), result.getString("nombre"), result.getString("marca"), result.getString("categoria"), result.getDouble("precio"), result.getString("descripcion"));
                 returned.add(temp);
             }
-            
+
         } catch (Exception e) {
             System.err.println("Error al visualizar");
         }
         return returned;
     }
-    
+
+    @Override
+    public boolean update(Object dataChange) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public Object getData(String id) {
+        String consult = this.selectTQ + this.table + this.whereQ + "sku = " + "'" + id + "'";
+        Object returned = null;
+
+        try ( PreparedStatement presSt = Conexion.dbConection.prepareStatement(consult)) {
+            ResultSet result = presSt.executeQuery();
+            while (result.next()) {
+                returned = new Producto(result.getString("sku"), result.getString("nombre"), result.getString("marca"), result.getString("categoria"), result.getDouble("precio"), result.getString("descripcion"));
+            }
+
+        } catch (Exception e) {
+            System.err.println("Error al visualizar");
+        }
+        return returned;
+    }
+
+    public Object getDataName(String name) {
+        String consult = this.selectTQ + this.table + this.whereQ + "nombre = " + "'" + name + "'";
+        Object returned = null;
+
+        try ( PreparedStatement presSt = Conexion.dbConection.prepareStatement(consult)) {
+            ResultSet result = presSt.executeQuery();
+            while (result.next()) {
+                returned = new Producto(result.getString("sku"), result.getString("nombre"), result.getString("marca"), result.getString("categoria"), result.getDouble("precio"), result.getString("descripcion"));
+            }
+
+        } catch (Exception e) {
+            System.err.println("Error al visualizar");
+        }
+        return returned;
+    }
+
+    @Override
+    protected String getSets(Object dataChange, Object dataOriginal) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
 }

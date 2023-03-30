@@ -5,7 +5,11 @@
 package GUI;
 
 import Program.Principal;
+import java.awt.event.KeyEvent;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
+import javax.swing.JTable;
 import javax.swing.JTextField;
 
 /**
@@ -19,6 +23,8 @@ public class Caja_V extends javax.swing.JFrame {
     public Caja_V(Principal p) {
         this.p = p;
         initComponents();
+        this.nombre.setEditable(false);
+        this.apellido.setEditable(false); 
     }
 
     /**
@@ -41,7 +47,6 @@ public class Caja_V extends javax.swing.JFrame {
         jPanel29 = new javax.swing.JPanel();
         jPanel30 = new javax.swing.JPanel();
         jPanel31 = new javax.swing.JPanel();
-        jButton14 = new javax.swing.JButton();
         jPanel22 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
@@ -113,13 +118,14 @@ public class Caja_V extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jPanel10 = new javax.swing.JPanel();
         apellido = new javax.swing.JTextField();
+        agg = new javax.swing.JButton();
+        verifyNit = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jPanel11 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         sucursal = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         nombreEmp = new javax.swing.JLabel();
-        apellidoEmp = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         codEmp = new javax.swing.JLabel();
         jPanel12 = new javax.swing.JPanel();
@@ -140,10 +146,11 @@ public class Caja_V extends javax.swing.JFrame {
         total = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        table = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel2.setMaximumSize(new java.awt.Dimension(247, 639));
         jPanel2.setLayout(new java.awt.BorderLayout());
 
         jPanel3.setLayout(new java.awt.BorderLayout());
@@ -170,7 +177,7 @@ public class Caja_V extends javax.swing.JFrame {
         jPanel30.setLayout(jPanel30Layout);
         jPanel30Layout.setHorizontalGroup(
             jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 94, Short.MAX_VALUE)
+            .addGap(0, 135, Short.MAX_VALUE)
         );
         jPanel30Layout.setVerticalGroup(
             jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -183,7 +190,7 @@ public class Caja_V extends javax.swing.JFrame {
         jPanel31.setLayout(jPanel31Layout);
         jPanel31Layout.setHorizontalGroup(
             jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 94, Short.MAX_VALUE)
+            .addGap(0, 135, Short.MAX_VALUE)
         );
         jPanel31Layout.setVerticalGroup(
             jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -191,9 +198,6 @@ public class Caja_V extends javax.swing.JFrame {
         );
 
         jPanel29.add(jPanel31);
-
-        jButton14.setText("CARGAR");
-        jPanel29.add(jButton14);
 
         jPanel28.add(jPanel29, java.awt.BorderLayout.CENTER);
 
@@ -212,6 +216,11 @@ public class Caja_V extends javax.swing.JFrame {
         jPanel22.add(jLabel12, java.awt.BorderLayout.LINE_END);
 
         listProductos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        listProductos.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                listProductosItemStateChanged(evt);
+            }
+        });
         jPanel22.add(listProductos, java.awt.BorderLayout.CENTER);
 
         jPanel3.add(jPanel22, java.awt.BorderLayout.CENTER);
@@ -242,12 +251,27 @@ public class Caja_V extends javax.swing.JFrame {
         jPanel16.setLayout(new java.awt.GridLayout(1, 3));
 
         jButton1.setText("7");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         jPanel16.add(jButton1);
 
         jButton2.setText("8");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         jPanel16.add(jButton2);
 
         jButton3.setText("9");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
         jPanel16.add(jButton3);
 
         jPanel34.add(jPanel16, java.awt.BorderLayout.CENTER);
@@ -267,9 +291,19 @@ public class Caja_V extends javax.swing.JFrame {
         jPanel21.setLayout(new java.awt.GridLayout(1, 3));
 
         jButton4.setText("4");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
         jPanel21.add(jButton4);
 
         jButton5.setText("5");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
         jPanel21.add(jButton5);
 
         jButton6.setText("6");
@@ -299,12 +333,27 @@ public class Caja_V extends javax.swing.JFrame {
         jPanel23.setLayout(new java.awt.GridLayout(1, 3));
 
         jButton7.setText("1");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
         jPanel23.add(jButton7);
 
         jButton8.setText("2");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
         jPanel23.add(jButton8);
 
         jButton9.setText("3");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
         jPanel23.add(jButton9);
 
         jPanel41.add(jPanel23, java.awt.BorderLayout.CENTER);
@@ -326,6 +375,11 @@ public class Caja_V extends javax.swing.JFrame {
         jPanel24.setLayout(new java.awt.GridLayout(1, 3));
 
         jButton10.setText("0");
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
         jPanel24.add(jButton10);
 
         jButton11.setText("P");
@@ -379,27 +433,32 @@ public class Caja_V extends javax.swing.JFrame {
         jPanel43.setLayout(jPanel43Layout);
         jPanel43Layout.setHorizontalGroup(
             jPanel43Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 77, Short.MAX_VALUE)
         );
         jPanel43Layout.setVerticalGroup(
             jPanel43Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 37, Short.MAX_VALUE)
+            .addGap(0, 39, Short.MAX_VALUE)
         );
 
         jPanel27.add(jPanel43);
 
         jButton13.setText("ENTER");
+        jButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton13ActionPerformed(evt);
+            }
+        });
         jPanel27.add(jButton13);
 
         javax.swing.GroupLayout jPanel44Layout = new javax.swing.GroupLayout(jPanel44);
         jPanel44.setLayout(jPanel44Layout);
         jPanel44Layout.setHorizontalGroup(
             jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 77, Short.MAX_VALUE)
         );
         jPanel44Layout.setVerticalGroup(
             jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 37, Short.MAX_VALUE)
+            .addGap(0, 39, Short.MAX_VALUE)
         );
 
         jPanel27.add(jPanel44);
@@ -426,7 +485,7 @@ public class Caja_V extends javax.swing.JFrame {
 
         jPanel18.setLayout(new java.awt.GridLayout(1, 2));
 
-        jPanel1.setLayout(new java.awt.GridLayout(3, 2));
+        jPanel1.setLayout(new java.awt.GridLayout(4, 2));
 
         jPanel5.setLayout(new java.awt.BorderLayout());
 
@@ -441,6 +500,11 @@ public class Caja_V extends javax.swing.JFrame {
         nit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nitActionPerformed(evt);
+            }
+        });
+        nit.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                nitKeyTyped(evt);
             }
         });
         jPanel6.add(nit, java.awt.BorderLayout.CENTER);
@@ -473,11 +537,27 @@ public class Caja_V extends javax.swing.JFrame {
 
         jPanel1.add(jPanel10);
 
+        agg.setText("Agregar");
+        agg.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                aggActionPerformed(evt);
+            }
+        });
+        jPanel1.add(agg);
+
+        verifyNit.setText("Registrar");
+        verifyNit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                verifyNitActionPerformed(evt);
+            }
+        });
+        jPanel1.add(verifyNit);
+
         jPanel18.add(jPanel1);
 
         jPanel4.setLayout(new java.awt.GridLayout(1, 2));
 
-        jPanel11.setLayout(new java.awt.GridLayout(7, 1));
+        jPanel11.setLayout(new java.awt.GridLayout(6, 1));
 
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("SUCURSAL");
@@ -493,12 +573,11 @@ public class Caja_V extends javax.swing.JFrame {
         nombreEmp.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jPanel11.add(nombreEmp);
 
-        apellidoEmp.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jPanel11.add(apellidoEmp);
-
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel11.setText("CODIGO");
         jPanel11.add(jLabel11);
+
+        codEmp.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jPanel11.add(codEmp);
 
         jPanel4.add(jPanel11);
@@ -552,7 +631,7 @@ public class Caja_V extends javax.swing.JFrame {
         jPanel46.setLayout(jPanel46Layout);
         jPanel46Layout.setHorizontalGroup(
             jPanel46Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 84, Short.MAX_VALUE)
+            .addGap(0, 87, Short.MAX_VALUE)
         );
         jPanel46Layout.setVerticalGroup(
             jPanel46Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -576,7 +655,7 @@ public class Caja_V extends javax.swing.JFrame {
         jLabel30.setText(" ");
         jPanel13.add(jLabel30, java.awt.BorderLayout.PAGE_START);
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -587,7 +666,7 @@ public class Caja_V extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane2.setViewportView(table);
 
         jPanel13.add(jScrollPane2, java.awt.BorderLayout.CENTER);
 
@@ -601,12 +680,141 @@ public class Caja_V extends javax.swing.JFrame {
     }//GEN-LAST:event_nitActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
+codProd.setText(codProd.getText()+6);
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-        // TODO add your handling code here:
+codProd.setText(codProd.getText()+"P");
     }//GEN-LAST:event_jButton11ActionPerformed
+
+    private void nitKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nitKeyTyped
+        char tecPress = evt.getKeyChar();
+
+        if (tecPress == KeyEvent.VK_ENTER) {
+            verifyNit.doClick();
+        }
+    }//GEN-LAST:event_nitKeyTyped
+
+
+    private void verifyNitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verifyNitActionPerformed
+        p.getCtrlVend().verifyNit();
+    }//GEN-LAST:event_verifyNitActionPerformed
+
+    private void aggActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aggActionPerformed
+        p.getCtrlVend().addClient();
+    }//GEN-LAST:event_aggActionPerformed
+
+    private void listProductosItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_listProductosItemStateChanged
+        p.getCtrlVend().selectProduct();
+    }//GEN-LAST:event_listProductosItemStateChanged
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        codProd.setText(codProd.getText()+7);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+codProd.setText(codProd.getText()+8);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+codProd.setText(codProd.getText()+9);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+codProd.setText(codProd.getText()+4);
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+codProd.setText(codProd.getText()+5);
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+codProd.setText(codProd.getText()+1);
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+codProd.setText(codProd.getText()+2);
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+codProd.setText(codProd.getText()+3);
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+codProd.setText(codProd.getText()+0);
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+        p.getCtrlVend().addPC();
+    }//GEN-LAST:event_jButton13ActionPerformed
+
+    public JTextField getCodProd() {
+        return codProd;
+    }
+
+    public void setCodProd(JTextField codProd) {
+        this.codProd = codProd;
+    }
+
+    public JComboBox<String> getListProductos() {
+        return listProductos;
+    }
+
+    public JTable getTable() {
+        return table;
+    }
+
+    public void setTable(JTable table) {
+        this.table = table;
+    }
+
+    public void setListProductos(JComboBox<String> listProductos) {
+        this.listProductos = listProductos;
+    }
+
+    public JButton getVerifyNit() {
+        return verifyNit;
+    }
+
+    public JLabel getNoFact() {
+        return noFact;
+    }
+
+    public void setNoFact(JLabel noFact) {
+        this.noFact = noFact;
+    }
+
+    public JTextField getCantProd() {
+        return cantProd;
+    }
+
+    public void setCantProd(JTextField cantProd) {
+        this.cantProd = cantProd;
+    }
+
+    public JLabel getCodEmp() {
+        return codEmp;
+    }
+
+    public void setCodEmp(JLabel codEmp) {
+        this.codEmp = codEmp;
+    }
+
+    public JLabel getTotal() {
+        return total;
+    }
+
+    public void setTotal(JLabel total) {
+        this.total = total;
+    }
+
+    public JLabel getSucursal() {
+        return sucursal;
+    }
+
+    public void setSucursal(JLabel sucursal) {
+        this.sucursal = sucursal;
+    }
 
     public JTextField getApellido() {
         return apellido;
@@ -616,12 +824,12 @@ public class Caja_V extends javax.swing.JFrame {
         this.apellido = apellido;
     }
 
-    public JLabel getApellidoEmp() {
-        return apellidoEmp;
+    public JLabel getFechFact() {
+        return fechFact;
     }
 
-    public void setApellidoEmp(JLabel apellidoEmp) {
-        this.apellidoEmp = apellidoEmp;
+    public void setFechFact(JLabel fechFact) {
+        this.fechFact = fechFact;
     }
 
     public JTextField getNit() {
@@ -648,10 +856,10 @@ public class Caja_V extends javax.swing.JFrame {
         this.nombreEmp = nombreEmp;
     }
 
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton agg;
     private javax.swing.JTextField apellido;
-    private javax.swing.JLabel apellidoEmp;
     private javax.swing.JTextField cantProd;
     private javax.swing.JLabel codEmp;
     private javax.swing.JTextField codProd;
@@ -662,7 +870,6 @@ public class Caja_V extends javax.swing.JFrame {
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -753,13 +960,14 @@ public class Caja_V extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable2;
     private javax.swing.JComboBox<String> listProductos;
     private javax.swing.JTextField nit;
     private javax.swing.JLabel noFact;
     private javax.swing.JTextField nombre;
     private javax.swing.JLabel nombreEmp;
     private javax.swing.JLabel sucursal;
+    private javax.swing.JTable table;
     private javax.swing.JLabel total;
+    private javax.swing.JButton verifyNit;
     // End of variables declaration//GEN-END:variables
 }

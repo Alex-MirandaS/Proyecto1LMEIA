@@ -16,8 +16,8 @@ import java.util.ArrayList;
  */
 public class ClienteCRUD extends ModelCRUD {
 
-    public ClienteCRUD(String table) {
-        super("ControlAdmin.Cliente ");
+    public ClienteCRUD() {
+        super("ControlAdmin.Cliente ", 3);
     }
 
     @Override
@@ -45,7 +45,7 @@ public class ClienteCRUD extends ModelCRUD {
             ResultSet result = presSt.executeQuery();
             Cliente temp;
             while (result.next()) {
-                temp = new Cliente(result.getString("nit"), result.getString("nombre"),result.getString("apellido"));
+                temp = new Cliente(result.getString("nit"), result.getString("nombre"), result.getString("apellido"));
                 returned.add(temp);
             }
 
@@ -53,6 +53,40 @@ public class ClienteCRUD extends ModelCRUD {
             System.err.println("Error al visualizar");
         }
         return returned;
+    }
+
+    @Override
+    public boolean update(Object dataChange) {
+        String consult = this.updateQ + this.table + "SET " + getSets(dataChange, getData(((Cliente) dataChange).getNit())) + this.whereQ + "= " + ((Cliente) dataChange).getNit();
+        try ( PreparedStatement preSt = Conexion.dbConection.prepareStatement(consult)) {
+            preSt.executeUpdate();
+            return true;
+        } catch (Exception e) {
+            System.err.println("ERROR AL EDITAR EL REGISTRO: " + e.getMessage());
+            return false;
+        }
+    }
+
+    @Override
+    public Object getData(String id) {
+        String consult = this.selectTQ + this.table + this.whereQ + "nit = " + "'" + id + "'";
+        Object returned = null;
+
+        try ( PreparedStatement presSt = Conexion.dbConection.prepareStatement(consult)) {
+            ResultSet result = presSt.executeQuery();
+            while (result.next()) {
+                returned = new Cliente(result.getString("nit"), result.getString("nombre"), result.getString("apellido"));
+            }
+
+        } catch (Exception e) {
+            System.err.println("Error al visualizar");
+        }
+        return returned;
+    }
+
+    @Override
+    protected String getSets(Object dataChange, Object dataOriginal) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
 }

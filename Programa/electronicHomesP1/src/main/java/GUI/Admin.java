@@ -161,7 +161,7 @@ public class Admin extends javax.swing.JFrame {
     }//GEN-LAST:event_agEmpleadoActionPerformed
 
     private void agClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agClienteActionPerformed
-        p.getCtrlAdmin().agData("agClilente");
+        p.getCtrlAdmin().agData("agCliente");
     }//GEN-LAST:event_agClienteActionPerformed
 
     private void seeReportsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seeReportsActionPerformed

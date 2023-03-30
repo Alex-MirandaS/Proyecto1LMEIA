@@ -17,7 +17,7 @@ import java.util.ArrayList;
 public class SucursalCRUD extends ModelCRUD {
 
     public SucursalCRUD() {
-        super("ControlAdmin.Sucursal ");
+        super("ControlAdmin.Sucursal ", 2);
     }
 
     @Override
@@ -52,6 +52,33 @@ public class SucursalCRUD extends ModelCRUD {
             System.err.println("Error al visualizar");
         }
         return returned;
+    }
+
+    @Override
+    public boolean update(Object dataChange) {
+        return true;
+    }
+
+    @Override
+    public Object getData(String id) {
+        String consult = this.selectTQ + this.table + this.whereQ + "codigo_id = " + "'"+id+"'";
+        Object returned = null;
+
+        try ( PreparedStatement presSt = Conexion.dbConection.prepareStatement(consult)) {
+            ResultSet result = presSt.executeQuery();
+            while (result.next()) {
+                returned = new Sucursal(result.getString("codigo_id"), result.getString("nombre"));
+            }
+
+        } catch (Exception e) {
+            System.err.println("Error al visualizar");
+        }
+        return returned;
+    }
+
+    @Override
+    protected String getSets(Object dataChange, Object dataOriginal) {
+        return "";
     }
 
 }

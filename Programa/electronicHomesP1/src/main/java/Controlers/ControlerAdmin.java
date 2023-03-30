@@ -5,6 +5,7 @@
 package Controlers;
 
 import GUI.TablaResultados;
+import Objects.Cliente;
 import Objects.Empleado;
 import Objects.Sucursal;
 import Program.Principal;
@@ -42,8 +43,9 @@ public class ControlerAdmin {
                 if (!convData(table.getValueAt(0, 0)).isBlank()
                         && !convData(table.getValueAt(0, 1)).isBlank()) {
                     try {
-                        Sucursal suc = new Sucursal(convData(table.getValueAt(0, 0)), convData(table.getValueAt(0, 0)));
+                        Sucursal suc = new Sucursal(convData(table.getValueAt(0, 0)), convData(table.getValueAt(0, 1)));
                         p.getSucCRUD().insert(suc);
+                        JOptionPane.showMessageDialog(null, "Sucursal Registrada");
                     } catch (Exception e) {
                         JOptionPane.showMessageDialog(null, "Se ingreso un valor no permitido, Intente de nuevo");
                     }
@@ -54,10 +56,16 @@ public class ControlerAdmin {
                 break;
             case "agEmpleado":
                 if (!convData(table.getValueAt(0, 0)).isBlank()
-                        && !convData(table.getValueAt(0, 1)).isBlank()) {
+                        && !convData(table.getValueAt(0, 1)).isBlank()
+                        && !convData(table.getValueAt(0, 2)).isBlank()) {
                     try {
-                        Empleado emp = new Sucursal(convData(table.getValueAt(0, 0)), convData(table.getValueAt(0, 0)));
-                        p.getSucCRUD().insert(suc);
+                        Empleado emp = new Empleado(convData(table.getValueAt(0, 0)),
+                                convData(table.getValueAt(0, 1)),
+                                convData(table.getValueAt(0, 2)),
+                                convData(table.getValueAt(0, 3)),
+                                getCodeSucursal(convData(table.getValueAt(0, 4))));
+                        p.getEmpCRUD().insert(emp);
+                        JOptionPane.showMessageDialog(null, "Empleado Registrado");
                     } catch (Exception e) {
                         JOptionPane.showMessageDialog(null, "Se ingreso un valor no permitido, Intente de nuevo");
                     }
@@ -65,21 +73,24 @@ public class ControlerAdmin {
                 } else {
                     JOptionPane.showMessageDialog(null, "Faltan datos por ingresar");
                 }
-
-                modelo.addColumn("Codigo de Empleado");
-                modelo.addColumn("Nombre");
-                modelo.addColumn("Contraseña");
-                modelo.addColumn("Rango");
-                modelo.addColumn("Codigo de Sucursal");
-                modelo.addRow(new Object[]{"E" + getLastEmpleado(), "", "", "Admin", ((Sucursal) p.getSucCRUD().seeAllData().get(0)).getNombre()});
-                addCB(table, table.getColumnModel().getColumn(3), getRango());
-                addCB(table, table.getColumnModel().getColumn(4), getNameSucursal());
                 break;
-            case "agClilente":
-                modelo.addColumn("Nit");
-                modelo.addColumn("Nombre");
-                modelo.addColumn("Apellido");
-                modelo.addRow(new Object[]{"", "", ""});
+            case "agCliente":
+                if (!convData(table.getValueAt(0, 0)).isBlank()
+                        && !convData(table.getValueAt(0, 1)).isBlank()
+                        && !convData(table.getValueAt(0, 2)).isBlank()) {
+                    try {
+                        Cliente clie = new Cliente(convData(table.getValueAt(0, 0)),
+                                convData(table.getValueAt(0, 1)),
+                                convData(table.getValueAt(0, 2)));
+                        p.getCliCRUD().insert(clie);
+                        JOptionPane.showMessageDialog(null, "Cliente Registrado");
+                    } catch (Exception e) {
+                        JOptionPane.showMessageDialog(null, "Se ingreso un valor no permitido, Intente de nuevo");
+                    }
+
+                } else {
+                    JOptionPane.showMessageDialog(null, "Faltan datos por ingresar");
+                }
                 break;
         }
     }
@@ -104,7 +115,7 @@ public class ControlerAdmin {
                 addCB(table, table.getColumnModel().getColumn(3), getRango());
                 addCB(table, table.getColumnModel().getColumn(4), getNameSucursal());
                 break;
-            case "agClilente":
+            case "agCliente":
                 modelo.addColumn("Nit");
                 modelo.addColumn("Nombre");
                 modelo.addColumn("Apellido");
@@ -133,7 +144,7 @@ public class ControlerAdmin {
 //        tabla.setVisible(true);
 //    }
     private Object getLastEmpleado() {
-        return "" + p.getEmpCRUD().seeAllData().size();
+        return "" + (p.getEmpCRUD().seeAllData().size()+1);
     }
 
     private Object getRango() {
@@ -162,7 +173,25 @@ public class ControlerAdmin {
     }
 
     private String convData(Object valueAt) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String ret = "";
+        if (valueAt instanceof JComboBox) {
+            ret += "" + ((JComboBox) valueAt).getSelectedItem();
+        } else {
+            ret += "" + valueAt;
+        }
+        return ret;
+
+    }
+
+    private String getCodeSucursal(String name) {
+        String cod = "";
+        ArrayList<Object> temp = p.getSucCRUD().seeAllData();
+        for (int i = 0; i < temp.size(); i++) {
+            if (((Sucursal) temp.get(i)).getNombre().equals(name)) {
+                cod = ((Sucursal) temp.get(i)).getCodigo_id();
+            }
+        }
+        return cod;
     }
 
 }

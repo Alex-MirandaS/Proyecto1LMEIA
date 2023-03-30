@@ -16,8 +16,8 @@ import java.util.ArrayList;
  */
 public class FacturaCRUD extends ModelCRUD {
 
-    public FacturaCRUD(String table) {
-        super("ControlVenta.Factura ");
+    public FacturaCRUD() {
+        super("ControlVenta.Factura ", 6);
     }
 
     @Override
@@ -56,6 +56,69 @@ public class FacturaCRUD extends ModelCRUD {
             System.err.println("Error al visualizar");
         }
         return returned;
+    }
+
+    @Override
+    public boolean update(Object dataChange) {
+        String consult = this.updateQ + this.table + "SET " + getSets(dataChange, getData(((Factura) dataChange).getNo_factura())) + this.whereQ + "= " + ((Factura) dataChange).getNo_factura();
+        try ( PreparedStatement preSt = Conexion.dbConection.prepareStatement(consult)) {
+            preSt.executeUpdate();
+            return true;
+        } catch (Exception e) {
+            System.err.println("ERROR AL EDITAR EL REGISTRO: " + e.getMessage());
+            return false;
+        }
+    }
+
+    @Override
+    public Object getData(String id) {
+        String consult = this.selectTQ + this.table + this.whereQ + "no_factura = " + id;
+        Object returned = null;
+
+        try ( PreparedStatement presSt = Conexion.dbConection.prepareStatement(consult)) {
+            ResultSet result = presSt.executeQuery();
+            while (result.next()) {
+                returned = new Factura(result.getString("no_factura"), result.getString("cod_vendedor"), result.getString("cod_sucursal"), result.getString("nit_cliente"), result.getDate("fecha"), result.getDouble("total"));
+            }
+
+        } catch (Exception e) {
+            System.err.println("Error al visualizar");
+        }
+        return returned;
+
+    }
+
+    @Override
+    protected String getSets(Object dataChange, Object dataOriginal) {
+        String txt = "";
+        ArrayList<String> array = new ArrayList<>();
+        Factura change = (Factura) dataChange;
+        Factura original = (Factura) dataOriginal;
+        if (original.getTotal() != change.getTotal()) {
+            array.add("total = " + change.getTotal());
+        }
+
+        if (original.getFecha() != change.getFecha()) {
+            array.add("fecha = " + change.getFecha());
+        }
+
+        if (original.getCod_vendedor() != change.getCod_vendedor()) {
+            array.add("cod_vendedor = " + change.getCod_vendedor());
+        }
+
+        if (original.getNit_cliente() != change.getNit_cliente()) {
+            array.add("nit_cliente = " + change.getNit_cliente());
+        }
+
+        for (int i = 0; i < array.size(); i++) {
+            if (i != array.size() - 1) {
+                txt += array.get(i) + ", ";
+            } else {
+                txt += array.get(i);
+            }
+
+        }
+        return txt;
     }
 
 }

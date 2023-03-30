@@ -16,8 +16,8 @@ import java.util.ArrayList;
  */
 public class VentaCRUD extends ModelCRUD {
 
-    public VentaCRUD(String table) {
-        super("ControlVenta.Venta ");
+    public VentaCRUD() {
+        super("ControlVenta.Venta ", 4);
     }
 
     @Override
@@ -54,6 +54,21 @@ public class VentaCRUD extends ModelCRUD {
             System.err.println("Error al visualizar");
         }
         return returned;
+    }
+
+    @Override
+    public boolean update(Object dataChange) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public Object getData(String id) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    protected String getSets(Object dataChange, Object dataOriginal) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
 }

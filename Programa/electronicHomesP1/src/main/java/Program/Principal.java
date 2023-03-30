@@ -4,10 +4,16 @@
  */
 package Program;
 
+import CRUD.ClienteCRUD;
 import CRUD.EmpleadoCRUD;
+import CRUD.FacturaCRUD;
+import CRUD.InventarioCRUD;
+import CRUD.ProductoCRUD;
 import CRUD.SucursalCRUD;
+import CRUD.VentaCRUD;
 import Controlers.ControlerAdmin;
 import Controlers.ControlerLogin;
+import Controlers.ControlerVendedor;
 import GUI.Admin;
 import GUI.Bodega;
 import GUI.Caja_V;
@@ -23,9 +29,15 @@ public class Principal {
 
     private EmpleadoCRUD empCRUD;
     private SucursalCRUD sucCRUD;
+    private ClienteCRUD cliCRUD;
+    private FacturaCRUD facCRUD;
+    private InventarioCRUD invCRUD;
+    private ProductoCRUD proCRUD;
+    private VentaCRUD venCRUD;
 
     private ControlerLogin ctrlLog;
     private ControlerAdmin ctrlAdmin;
+    private ControlerVendedor ctrlVend;
 
     private Login logGUI;
     private Admin adminGUI;
@@ -36,8 +48,15 @@ public class Principal {
     public Principal() {
         this.empCRUD = new EmpleadoCRUD();
         this.sucCRUD = new SucursalCRUD();
+        this.cliCRUD = new ClienteCRUD();
+        this.facCRUD = new FacturaCRUD();
+        this.invCRUD = new InventarioCRUD();
+        this.proCRUD = new ProductoCRUD();
+        this.venCRUD = new VentaCRUD();
+        //CONTROLERS
         this.ctrlLog = new ControlerLogin(this);
         this.ctrlAdmin = new ControlerAdmin(this);
+        this.ctrlVend = new ControlerVendedor(this);
         this.logGUI = new Login(this);
         this.adminGUI = new Admin(this);
         this.bodegaGUI = new Bodega(this);
@@ -61,12 +80,12 @@ public class Principal {
         switch (user.getRango()) {
             case "Admin":
                 adminGUI.setVisible(true);
-                startAdmin(user);
                 break;
             case "Bodega":
                 bodegaGUI.setVisible(true);
                 break;
             case "Vendedor":
+                startVendedor(user);
                 vendedorGUI.setVisible(true);
                 break;
             case "Inventario":
@@ -75,8 +94,8 @@ public class Principal {
         }
     }
 
-    private void startAdmin(Empleado user) {
-
+    private void startVendedor(Empleado user) {
+        ctrlVend.initialData(user);
     }
 
     public ControlerAdmin getCtrlAdmin() {
@@ -85,6 +104,14 @@ public class Principal {
 
     public void setCtrlAdmin(ControlerAdmin ctrlAdmin) {
         this.ctrlAdmin = ctrlAdmin;
+    }
+
+    public ControlerVendedor getCtrlVend() {
+        return ctrlVend;
+    }
+
+    public void setCtrlVend(ControlerVendedor ctrlVend) {
+        this.ctrlVend = ctrlVend;
     }
 
     public SucursalCRUD getSucCRUD() {
@@ -97,6 +124,46 @@ public class Principal {
 
     public void setEmpCRUD(EmpleadoCRUD empCRUD) {
         this.empCRUD = empCRUD;
+    }
+
+    public ClienteCRUD getCliCRUD() {
+        return cliCRUD;
+    }
+
+    public void setCliCRUD(ClienteCRUD cliCRUD) {
+        this.cliCRUD = cliCRUD;
+    }
+
+    public FacturaCRUD getFacCRUD() {
+        return facCRUD;
+    }
+
+    public void setFacCRUD(FacturaCRUD facCRUD) {
+        this.facCRUD = facCRUD;
+    }
+
+    public InventarioCRUD getInvCRUD() {
+        return invCRUD;
+    }
+
+    public void setInvCRUD(InventarioCRUD invCRUD) {
+        this.invCRUD = invCRUD;
+    }
+
+    public ProductoCRUD getProCRUD() {
+        return proCRUD;
+    }
+
+    public void setProCRUD(ProductoCRUD proCRUD) {
+        this.proCRUD = proCRUD;
+    }
+
+    public VentaCRUD getVenCRUD() {
+        return venCRUD;
+    }
+
+    public void setVenCRUD(VentaCRUD venCRUD) {
+        this.venCRUD = venCRUD;
     }
 
     public Caja_V getVendedorGUI() {
@@ -113,6 +180,22 @@ public class Principal {
 
     public void setAdminGUI(Admin adminGUI) {
         this.adminGUI = adminGUI;
+    }
+
+    public Bodega getBodegaGUI() {
+        return bodegaGUI;
+    }
+
+    public void setBodegaGUI(Bodega bodegaGUI) {
+        this.bodegaGUI = bodegaGUI;
+    }
+
+    public Inventario_I getInventarioGUI() {
+        return inventarioGUI;
+    }
+
+    public void setInventarioGUI(Inventario_I inventarioGUI) {
+        this.inventarioGUI = inventarioGUI;
     }
 
 }

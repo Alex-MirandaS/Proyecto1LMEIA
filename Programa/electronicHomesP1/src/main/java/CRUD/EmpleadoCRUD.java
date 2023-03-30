@@ -17,7 +17,7 @@ import java.util.ArrayList;
 public class EmpleadoCRUD extends ModelCRUD {
 
     public EmpleadoCRUD() {
-        super("ControlAdmin.Empleado ");
+        super("ControlAdmin.Empleado ", 5);
     }
 
     @Override
@@ -55,6 +55,21 @@ public class EmpleadoCRUD extends ModelCRUD {
             System.err.println("Error al visualizar");
         }
         return returned;
+    }
+
+    @Override
+    public boolean update(Object dataChange) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public Object getData(String id) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    protected String getSets(Object dataChange, Object dataOriginal) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
 }
