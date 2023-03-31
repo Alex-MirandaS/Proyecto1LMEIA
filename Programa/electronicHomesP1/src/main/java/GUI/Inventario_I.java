@@ -5,6 +5,11 @@
 package GUI;
 
 import Program.Principal;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.JSpinner;
+import javax.swing.JTable;
+import javax.swing.JTextField;
 
 /**
  *
@@ -13,9 +18,12 @@ import Program.Principal;
 public class Inventario_I extends javax.swing.JFrame {
 
     private Principal p;
+
     public Inventario_I(Principal p) {
         this.p = p;
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.setExtendedState(this.MAXIMIZED_BOTH);
     }
 
     /**
@@ -27,7 +35,6 @@ public class Inventario_I extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -48,7 +55,7 @@ public class Inventario_I extends javax.swing.JFrame {
         jLabel19 = new javax.swing.JLabel();
         jPanel32 = new javax.swing.JPanel();
         jPanel33 = new javax.swing.JPanel();
-        jButton14 = new javax.swing.JButton();
+        cargar = new javax.swing.JButton();
         jPanel34 = new javax.swing.JPanel();
         jPanel23 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
@@ -100,7 +107,7 @@ public class Inventario_I extends javax.swing.JFrame {
         jLabel41 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jLabel42 = new javax.swing.JLabel();
-        jSpinner1 = new javax.swing.JSpinner();
+        cantidad = new javax.swing.JSpinner();
         jPanel2 = new javax.swing.JPanel();
         jPanel13 = new javax.swing.JPanel();
         jPanel14 = new javax.swing.JPanel();
@@ -110,29 +117,59 @@ public class Inventario_I extends javax.swing.JFrame {
         jLabel34 = new javax.swing.JLabel();
         jPanel38 = new javax.swing.JPanel();
         agProduct = new javax.swing.JButton();
-        verInventario = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
+        verInventario = new javax.swing.JButton();
         jLabel30 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        table = new javax.swing.JTable();
+        jPanel12 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jPanel15 = new javax.swing.JPanel();
+        jPanel17 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        jPanel18 = new javax.swing.JPanel();
+        jLabel37 = new javax.swing.JLabel();
+        codSucursal = new javax.swing.JLabel();
+        jPanel19 = new javax.swing.JPanel();
+        jLabel35 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        jPanel20 = new javax.swing.JPanel();
+        jLabel39 = new javax.swing.JLabel();
+        nomSucursal = new javax.swing.JLabel();
+        jPanel27 = new javax.swing.JPanel();
+        jLabel43 = new javax.swing.JLabel();
+        jLabel44 = new javax.swing.JLabel();
+        jPanel28 = new javax.swing.JPanel();
+        jLabel45 = new javax.swing.JLabel();
+        codEmpleado = new javax.swing.JLabel();
+        jPanel29 = new javax.swing.JPanel();
+        jLabel46 = new javax.swing.JLabel();
+        jLabel47 = new javax.swing.JLabel();
+        jPanel30 = new javax.swing.JPanel();
+        jLabel48 = new javax.swing.JLabel();
+        nomEmpleado = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("INVENTARIO");
-        getContentPane().add(jLabel1, java.awt.BorderLayout.PAGE_START);
 
         jPanel1.setLayout(new java.awt.BorderLayout());
 
         jPanel5.setLayout(new java.awt.BorderLayout());
 
+        jLabel2.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel2.setFont(new java.awt.Font("Courier 10 Pitch", 1, 14)); // NOI18N
         jLabel2.setText(" ");
         jPanel5.add(jLabel2, java.awt.BorderLayout.PAGE_START);
 
+        jLabel3.setFont(new java.awt.Font("Courier 10 Pitch", 0, 12)); // NOI18N
         jLabel3.setText("  ");
         jPanel5.add(jLabel3, java.awt.BorderLayout.PAGE_END);
 
+        jLabel5.setFont(new java.awt.Font("Courier 10 Pitch", 0, 12)); // NOI18N
         jLabel5.setText("          ");
         jPanel5.add(jLabel5, java.awt.BorderLayout.LINE_START);
 
@@ -141,10 +178,17 @@ public class Inventario_I extends javax.swing.JFrame {
 
         jPanel7.setLayout(new java.awt.GridLayout(1, 2));
 
+        jLabel7.setFont(new java.awt.Font("Courier 10 Pitch", 0, 12)); // NOI18N
         jLabel7.setText("SUCURSAL ORIGEN");
         jPanel7.add(jLabel7);
 
+        list_sucursales.setFont(new java.awt.Font("Courier 10 Pitch", 0, 12)); // NOI18N
         list_sucursales.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        list_sucursales.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                list_sucursalesItemStateChanged(evt);
+            }
+        });
         jPanel7.add(list_sucursales);
 
         jPanel5.add(jPanel7, java.awt.BorderLayout.CENTER);
@@ -157,6 +201,7 @@ public class Inventario_I extends javax.swing.JFrame {
 
         jPanel10.setLayout(new java.awt.BorderLayout());
 
+        jLabel8.setFont(new java.awt.Font("Courier 10 Pitch", 0, 12)); // NOI18N
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("INGRESO POR BUSQUEDA DE PRODUCTO");
         jPanel10.add(jLabel8, java.awt.BorderLayout.PAGE_START);
@@ -179,7 +224,7 @@ public class Inventario_I extends javax.swing.JFrame {
         jPanel33.setLayout(jPanel33Layout);
         jPanel33Layout.setHorizontalGroup(
             jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 102, Short.MAX_VALUE)
+            .addGap(0, 106, Short.MAX_VALUE)
         );
         jPanel33Layout.setVerticalGroup(
             jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -188,14 +233,20 @@ public class Inventario_I extends javax.swing.JFrame {
 
         jPanel32.add(jPanel33);
 
-        jButton14.setText("CARGAR");
-        jPanel32.add(jButton14);
+        cargar.setFont(new java.awt.Font("Courier 10 Pitch", 0, 12)); // NOI18N
+        cargar.setText("CARGAR");
+        cargar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cargarActionPerformed(evt);
+            }
+        });
+        jPanel32.add(cargar);
 
         javax.swing.GroupLayout jPanel34Layout = new javax.swing.GroupLayout(jPanel34);
         jPanel34.setLayout(jPanel34Layout);
         jPanel34Layout.setHorizontalGroup(
             jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 102, Short.MAX_VALUE)
+            .addGap(0, 106, Short.MAX_VALUE)
         );
         jPanel34Layout.setVerticalGroup(
             jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -220,6 +271,7 @@ public class Inventario_I extends javax.swing.JFrame {
         jLabel12.setText("     ");
         jPanel23.add(jLabel12, java.awt.BorderLayout.LINE_END);
 
+        listProductos.setFont(new java.awt.Font("Courier 10 Pitch", 0, 12)); // NOI18N
         listProductos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         listProductos.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
@@ -383,10 +435,13 @@ public class Inventario_I extends javax.swing.JFrame {
 
         jPanel6.setLayout(new java.awt.GridLayout(1, 2));
 
+        jLabel42.setFont(new java.awt.Font("Courier 10 Pitch", 0, 12)); // NOI18N
         jLabel42.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel42.setText("CANTIDAD");
         jPanel6.add(jLabel42);
-        jPanel6.add(jSpinner1);
+
+        cantidad.setFont(new java.awt.Font("Courier 10 Pitch", 0, 12)); // NOI18N
+        jPanel6.add(cantidad);
 
         jPanel11.add(jPanel6, java.awt.BorderLayout.CENTER);
 
@@ -422,17 +477,20 @@ public class Inventario_I extends javax.swing.JFrame {
 
         jPanel38.setLayout(new java.awt.GridLayout(1, 4));
 
+        agProduct.setFont(new java.awt.Font("Courier 10 Pitch", 0, 12)); // NOI18N
         agProduct.setText("Agregar Producto");
+        agProduct.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                agProductActionPerformed(evt);
+            }
+        });
         jPanel38.add(agProduct);
-
-        verInventario.setText("VER INVENTARIO");
-        jPanel38.add(verInventario);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 123, Short.MAX_VALUE)
+            .addGap(0, 124, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -445,7 +503,7 @@ public class Inventario_I extends javax.swing.JFrame {
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 123, Short.MAX_VALUE)
+            .addGap(0, 124, Short.MAX_VALUE)
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -454,14 +512,22 @@ public class Inventario_I extends javax.swing.JFrame {
 
         jPanel38.add(jPanel4);
 
+        verInventario.setFont(new java.awt.Font("Courier 10 Pitch", 0, 12)); // NOI18N
+        verInventario.setText("VER INVENTARIO");
+        jPanel38.add(verInventario);
+
         jPanel14.add(jPanel38, java.awt.BorderLayout.CENTER);
 
         jPanel13.add(jPanel14, java.awt.BorderLayout.PAGE_END);
 
+        jLabel30.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel30.setFont(new java.awt.Font("Courier 10 Pitch", 1, 14)); // NOI18N
         jLabel30.setText(" ");
         jPanel13.add(jLabel30, java.awt.BorderLayout.PAGE_START);
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        table.setBackground(new java.awt.Color(0, 0, 0));
+        table.setFont(new java.awt.Font("Courier 10 Pitch", 1, 14)); // NOI18N
+        table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -472,13 +538,161 @@ public class Inventario_I extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane2.setViewportView(table);
 
         jPanel13.add(jScrollPane2, java.awt.BorderLayout.CENTER);
 
         jPanel2.add(jPanel13, java.awt.BorderLayout.CENTER);
 
         getContentPane().add(jPanel2, java.awt.BorderLayout.CENTER);
+
+        jPanel12.setLayout(new java.awt.BorderLayout());
+
+        jLabel4.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel4.setFont(new java.awt.Font("Courier 10 Pitch", 1, 14)); // NOI18N
+        jLabel4.setText("  ");
+        jPanel12.add(jLabel4, java.awt.BorderLayout.PAGE_START);
+
+        jLabel11.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel11.setFont(new java.awt.Font("Courier 10 Pitch", 1, 14)); // NOI18N
+        jLabel11.setText("  ");
+        jPanel12.add(jLabel11, java.awt.BorderLayout.PAGE_END);
+
+        jLabel16.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel16.setFont(new java.awt.Font("Courier 10 Pitch", 1, 14)); // NOI18N
+        jLabel16.setText("     ");
+        jPanel12.add(jLabel16, java.awt.BorderLayout.LINE_START);
+
+        jLabel17.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel17.setFont(new java.awt.Font("Courier 10 Pitch", 1, 14)); // NOI18N
+        jLabel17.setText("     ");
+        jPanel12.add(jLabel17, java.awt.BorderLayout.LINE_END);
+
+        jPanel15.setLayout(new java.awt.GridLayout(1, 4));
+
+        jPanel17.setLayout(new java.awt.BorderLayout());
+
+        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel1.setFont(new java.awt.Font("Courier 10 Pitch", 1, 14)); // NOI18N
+        jLabel1.setText("   ");
+        jPanel17.add(jLabel1, java.awt.BorderLayout.LINE_END);
+
+        jLabel36.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel36.setFont(new java.awt.Font("Courier 10 Pitch", 1, 14)); // NOI18N
+        jLabel36.setText("   ");
+        jPanel17.add(jLabel36, java.awt.BorderLayout.LINE_START);
+
+        jPanel18.setLayout(new java.awt.GridLayout(2, 1));
+
+        jLabel37.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel37.setFont(new java.awt.Font("Courier 10 Pitch", 1, 14)); // NOI18N
+        jLabel37.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel37.setText("COD. SUCURSAL");
+        jPanel18.add(jLabel37);
+
+        codSucursal.setBackground(new java.awt.Color(0, 0, 0));
+        codSucursal.setFont(new java.awt.Font("Courier 10 Pitch", 1, 14)); // NOI18N
+        codSucursal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        codSucursal.setText(" ");
+        jPanel18.add(codSucursal);
+
+        jPanel17.add(jPanel18, java.awt.BorderLayout.CENTER);
+
+        jPanel15.add(jPanel17);
+
+        jPanel19.setLayout(new java.awt.BorderLayout());
+
+        jLabel35.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel35.setFont(new java.awt.Font("Courier 10 Pitch", 1, 14)); // NOI18N
+        jLabel35.setText("   ");
+        jPanel19.add(jLabel35, java.awt.BorderLayout.LINE_END);
+
+        jLabel38.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel38.setFont(new java.awt.Font("Courier 10 Pitch", 1, 14)); // NOI18N
+        jLabel38.setText("   ");
+        jPanel19.add(jLabel38, java.awt.BorderLayout.LINE_START);
+
+        jPanel20.setLayout(new java.awt.GridLayout(2, 1));
+
+        jLabel39.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel39.setFont(new java.awt.Font("Courier 10 Pitch", 1, 14)); // NOI18N
+        jLabel39.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel39.setText("SUCURSAL");
+        jPanel20.add(jLabel39);
+
+        nomSucursal.setBackground(new java.awt.Color(0, 0, 0));
+        nomSucursal.setFont(new java.awt.Font("Courier 10 Pitch", 1, 14)); // NOI18N
+        nomSucursal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        nomSucursal.setText(" ");
+        jPanel20.add(nomSucursal);
+
+        jPanel19.add(jPanel20, java.awt.BorderLayout.CENTER);
+
+        jPanel15.add(jPanel19);
+
+        jPanel27.setLayout(new java.awt.BorderLayout());
+
+        jLabel43.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel43.setFont(new java.awt.Font("Courier 10 Pitch", 1, 14)); // NOI18N
+        jLabel43.setText("   ");
+        jPanel27.add(jLabel43, java.awt.BorderLayout.LINE_END);
+
+        jLabel44.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel44.setFont(new java.awt.Font("Courier 10 Pitch", 1, 14)); // NOI18N
+        jLabel44.setText("   ");
+        jPanel27.add(jLabel44, java.awt.BorderLayout.LINE_START);
+
+        jPanel28.setLayout(new java.awt.GridLayout(2, 1));
+
+        jLabel45.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel45.setFont(new java.awt.Font("Courier 10 Pitch", 1, 14)); // NOI18N
+        jLabel45.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel45.setText("COD. EMPLEADO");
+        jPanel28.add(jLabel45);
+
+        codEmpleado.setBackground(new java.awt.Color(0, 0, 0));
+        codEmpleado.setFont(new java.awt.Font("Courier 10 Pitch", 1, 14)); // NOI18N
+        codEmpleado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        codEmpleado.setText(" ");
+        jPanel28.add(codEmpleado);
+
+        jPanel27.add(jPanel28, java.awt.BorderLayout.CENTER);
+
+        jPanel15.add(jPanel27);
+
+        jPanel29.setLayout(new java.awt.BorderLayout());
+
+        jLabel46.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel46.setFont(new java.awt.Font("Courier 10 Pitch", 1, 14)); // NOI18N
+        jLabel46.setText("   ");
+        jPanel29.add(jLabel46, java.awt.BorderLayout.LINE_END);
+
+        jLabel47.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel47.setFont(new java.awt.Font("Courier 10 Pitch", 1, 14)); // NOI18N
+        jLabel47.setText("   ");
+        jPanel29.add(jLabel47, java.awt.BorderLayout.LINE_START);
+
+        jPanel30.setLayout(new java.awt.GridLayout(2, 1));
+
+        jLabel48.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel48.setFont(new java.awt.Font("Courier 10 Pitch", 1, 14)); // NOI18N
+        jLabel48.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel48.setText("EMPLEADO");
+        jPanel30.add(jLabel48);
+
+        nomEmpleado.setBackground(new java.awt.Color(0, 0, 0));
+        nomEmpleado.setFont(new java.awt.Font("Courier 10 Pitch", 1, 14)); // NOI18N
+        nomEmpleado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        nomEmpleado.setText(" ");
+        jPanel30.add(nomEmpleado);
+
+        jPanel29.add(jPanel30, java.awt.BorderLayout.CENTER);
+
+        jPanel15.add(jPanel29);
+
+        jPanel12.add(jPanel15, java.awt.BorderLayout.CENTER);
+
+        getContentPane().add(jPanel12, java.awt.BorderLayout.PAGE_START);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -492,19 +706,105 @@ public class Inventario_I extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void listProductosItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_listProductosItemStateChanged
-        //AGREGAR Y DAR ENTER AL PRODUCTO Y CAMBIO EN LA INFO
+        p.getCtrlInve().selectProduct();
     }//GEN-LAST:event_listProductosItemStateChanged
 
+    private void list_sucursalesItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_list_sucursalesItemStateChanged
+        p.getCtrlInve().updateProducts();
+    }//GEN-LAST:event_list_sucursalesItemStateChanged
+
+    private void agProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agProductActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_agProductActionPerformed
+
+    private void cargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cargarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cargarActionPerformed
+
+    public JLabel getCodEmpleado() {
+        return codEmpleado;
+    }
+
+    public void setCodEmpleado(JLabel codEmpleado) {
+        this.codEmpleado = codEmpleado;
+    }
+
+    public JTextField getCodProd() {
+        return codProd;
+    }
+
+    public void setCodProd(JTextField codProd) {
+        this.codProd = codProd;
+    }
+
+    public JLabel getCodSucursal() {
+        return codSucursal;
+    }
+
+    public void setCodSucursal(JLabel codSucursal) {
+        this.codSucursal = codSucursal;
+    }
+
+    public JLabel getNomEmpleado() {
+        return nomEmpleado;
+    }
+
+    public void setNomEmpleado(JLabel nomEmpleado) {
+        this.nomEmpleado = nomEmpleado;
+    }
+
+    public JLabel getNomSucursal() {
+        return nomSucursal;
+    }
+
+    public void setNomSucursal(JLabel nomSucursal) {
+        this.nomSucursal = nomSucursal;
+    }
+
+    public JSpinner getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(JSpinner cantidad) {
+        this.cantidad = cantidad;
+    }
+
+    public JComboBox<String> getListProductos() {
+        return listProductos;
+    }
+
+    public void setListProductos(JComboBox<String> listProductos) {
+        this.listProductos = listProductos;
+    }
+
+    public JComboBox<String> getList_sucursales() {
+        return list_sucursales;
+    }
+
+    public void setList_sucursales(JComboBox<String> list_sucursales) {
+        this.list_sucursales = list_sucursales;
+    }
+
+    public JTable getTable() {
+        return table;
+    }
+
+    public void setTable(JTable table) {
+        this.table = table;
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton agProduct;
+    private javax.swing.JSpinner cantidad;
+    private javax.swing.JButton cargar;
+    private javax.swing.JLabel codEmpleado;
     private javax.swing.JTextField codProd;
+    private javax.swing.JLabel codSucursal;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -515,10 +815,13 @@ public class Inventario_I extends javax.swing.JFrame {
     private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
@@ -538,9 +841,21 @@ public class Inventario_I extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -549,17 +864,27 @@ public class Inventario_I extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel16;
+    private javax.swing.JPanel jPanel17;
+    private javax.swing.JPanel jPanel18;
+    private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel20;
     private javax.swing.JPanel jPanel21;
     private javax.swing.JPanel jPanel22;
     private javax.swing.JPanel jPanel23;
     private javax.swing.JPanel jPanel24;
     private javax.swing.JPanel jPanel25;
     private javax.swing.JPanel jPanel26;
+    private javax.swing.JPanel jPanel27;
+    private javax.swing.JPanel jPanel28;
+    private javax.swing.JPanel jPanel29;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel30;
     private javax.swing.JPanel jPanel31;
     private javax.swing.JPanel jPanel32;
     private javax.swing.JPanel jPanel33;
@@ -582,10 +907,11 @@ public class Inventario_I extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JSpinner jSpinner1;
-    private javax.swing.JTable jTable2;
     private javax.swing.JComboBox<String> listProductos;
     private javax.swing.JComboBox<String> list_sucursales;
+    private javax.swing.JLabel nomEmpleado;
+    private javax.swing.JLabel nomSucursal;
+    private javax.swing.JTable table;
     private javax.swing.JButton verInventario;
     // End of variables declaration//GEN-END:variables
 }

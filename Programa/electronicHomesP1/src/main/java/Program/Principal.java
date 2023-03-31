@@ -9,16 +9,20 @@ import CRUD.EmpleadoCRUD;
 import CRUD.FacturaCRUD;
 import CRUD.InventarioCRUD;
 import CRUD.ProductoCRUD;
+import CRUD.ReportesCRUD;
 import CRUD.SucursalCRUD;
 import CRUD.VentaCRUD;
 import Controlers.ControlerAdmin;
+import Controlers.ControlerInventario;
 import Controlers.ControlerLogin;
+import Controlers.ControlerReports;
 import Controlers.ControlerVendedor;
 import GUI.Admin;
 import GUI.Bodega;
 import GUI.Caja_V;
 import GUI.Inventario_I;
 import GUI.Login;
+import GUI.ReportesGUI;
 import Objects.Empleado;
 
 /**
@@ -34,18 +38,23 @@ public class Principal {
     private InventarioCRUD invCRUD;
     private ProductoCRUD proCRUD;
     private VentaCRUD venCRUD;
+    private ReportesCRUD repCRUD;
 
     private ControlerLogin ctrlLog;
     private ControlerAdmin ctrlAdmin;
     private ControlerVendedor ctrlVend;
+    private ControlerInventario ctrlInve;
+    private ControlerReports ctrlRepo;
 
     private Login logGUI;
     private Admin adminGUI;
     private Bodega bodegaGUI;
     private Caja_V vendedorGUI;
     private Inventario_I inventarioGUI;
+    private ReportesGUI reportGUI;
 
     public Principal() {
+        //CRUD'S
         this.empCRUD = new EmpleadoCRUD();
         this.sucCRUD = new SucursalCRUD();
         this.cliCRUD = new ClienteCRUD();
@@ -53,15 +62,20 @@ public class Principal {
         this.invCRUD = new InventarioCRUD();
         this.proCRUD = new ProductoCRUD();
         this.venCRUD = new VentaCRUD();
-        //CONTROLERS
-        this.ctrlLog = new ControlerLogin(this);
-        this.ctrlAdmin = new ControlerAdmin(this);
-        this.ctrlVend = new ControlerVendedor(this);
+        this.repCRUD = new ReportesCRUD();
+        //GUI
         this.logGUI = new Login(this);
         this.adminGUI = new Admin(this);
         this.bodegaGUI = new Bodega(this);
         this.vendedorGUI = new Caja_V(this);
         this.inventarioGUI = new Inventario_I(this);
+        this.reportGUI = new ReportesGUI(this);
+        //CONTROLERS
+        this.ctrlLog = new ControlerLogin(this);
+        this.ctrlAdmin = new ControlerAdmin(this);
+        this.ctrlVend = new ControlerVendedor(this);
+        this.ctrlInve = new ControlerInventario(this);
+        this.ctrlRepo = new ControlerReports(this);
     }
 
     public void start() {
@@ -80,22 +94,28 @@ public class Principal {
         switch (user.getRango()) {
             case "Admin":
                 adminGUI.setVisible(true);
+                adminGUI.getAgEmpleado().doClick();
                 break;
             case "Bodega":
                 bodegaGUI.setVisible(true);
                 break;
             case "Vendedor":
-                startVendedor(user);
+                ctrlVend.initialData(user);
                 vendedorGUI.setVisible(true);
                 break;
             case "Inventario":
+                ctrlInve.initialData(user);
                 inventarioGUI.setVisible(true);
                 break;
         }
     }
 
-    private void startVendedor(Empleado user) {
-        ctrlVend.initialData(user);
+    public ControlerInventario getCtrlInve() {
+        return ctrlInve;
+    }
+
+    public void setCtrlInve(ControlerInventario ctrlInve) {
+        this.ctrlInve = ctrlInve;
     }
 
     public ControlerAdmin getCtrlAdmin() {
@@ -196,6 +216,30 @@ public class Principal {
 
     public void setInventarioGUI(Inventario_I inventarioGUI) {
         this.inventarioGUI = inventarioGUI;
+    }
+
+    public ControlerReports getCtrlRepo() {
+        return ctrlRepo;
+    }
+
+    public void setCtrlRepo(ControlerReports ctrlRepo) {
+        this.ctrlRepo = ctrlRepo;
+    }
+
+    public ReportesGUI getReportGUI() {
+        return reportGUI;
+    }
+
+    public void setReportGUI(ReportesGUI reportGUI) {
+        this.reportGUI = reportGUI;
+    }
+
+    public ReportesCRUD getRepCRUD() {
+        return repCRUD;
+    }
+
+    public void setRepCRUD(ReportesCRUD repCRUD) {
+        this.repCRUD = repCRUD;
     }
 
 }

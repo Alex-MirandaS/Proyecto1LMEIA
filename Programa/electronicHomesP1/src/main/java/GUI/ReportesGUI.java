@@ -4,6 +4,7 @@
  */
 package GUI;
 
+import Program.Principal;
 import javax.swing.JButton;
 
 /**
@@ -12,11 +13,11 @@ import javax.swing.JButton;
  */
 public class ReportesGUI extends javax.swing.JFrame {
 
-    //private Principal principal;
+    private Principal p;
 
-    public ReportesGUI() {
+    public ReportesGUI(Principal p) {
         initComponents();
-//        this.principal = principal;
+        this.p = p;
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }
@@ -41,12 +42,15 @@ public class ReportesGUI extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
-        rErrores = new javax.swing.JButton();
-        rTokens = new javax.swing.JButton();
-        rLexemas = new javax.swing.JButton();
-        rAFD = new javax.swing.JButton();
-        jLabel8 = new javax.swing.JLabel();
-        analisisSintactico = new javax.swing.JButton();
+        rProdMasV = new javax.swing.JButton();
+        rClieMasGan = new javax.swing.JButton();
+        rSucMasVen = new javax.swing.JButton();
+        rProMasIng = new javax.swing.JButton();
+        rSucMasIng = new javax.swing.JButton();
+        rProdMasVenSuc = new javax.swing.JButton();
+        rEmpMasVen = new javax.swing.JButton();
+        rProMasIngSuc = new javax.swing.JButton();
+        rEmpMasIng = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 0));
@@ -87,65 +91,106 @@ public class ReportesGUI extends javax.swing.JFrame {
         jPanel3.add(jLabel7, java.awt.BorderLayout.PAGE_END);
 
         jPanel4.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel4.setLayout(new java.awt.GridLayout(2, 3));
+        jPanel4.setLayout(new java.awt.GridLayout(3, 3));
 
-        rErrores.setBackground(new java.awt.Color(0, 0, 0));
-        rErrores.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
-        rErrores.setForeground(new java.awt.Color(255, 255, 255));
-        rErrores.setText("REPORTE DE ERRORES");
-        rErrores.addActionListener(new java.awt.event.ActionListener() {
+        rProdMasV.setBackground(new java.awt.Color(0, 0, 0));
+        rProdMasV.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        rProdMasV.setForeground(new java.awt.Color(255, 255, 255));
+        rProdMasV.setText("10 PRODUCTOS MAS VENDIDOS");
+        rProdMasV.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rErroresActionPerformed(evt);
+                rProdMasVActionPerformed(evt);
             }
         });
-        jPanel4.add(rErrores);
+        jPanel4.add(rProdMasV);
 
-        rTokens.setBackground(new java.awt.Color(0, 0, 0));
-        rTokens.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
-        rTokens.setForeground(new java.awt.Color(255, 255, 255));
-        rTokens.setText("REPORTE DE TOKENS");
-        rTokens.addActionListener(new java.awt.event.ActionListener() {
+        rClieMasGan.setBackground(new java.awt.Color(0, 0, 0));
+        rClieMasGan.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        rClieMasGan.setForeground(new java.awt.Color(255, 255, 255));
+        rClieMasGan.setText("10 CLIENTES QUE MAS GANACIAS GENERAN");
+        rClieMasGan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rTokensActionPerformed(evt);
+                rClieMasGanActionPerformed(evt);
             }
         });
-        jPanel4.add(rTokens);
+        jPanel4.add(rClieMasGan);
 
-        rLexemas.setBackground(new java.awt.Color(0, 0, 0));
-        rLexemas.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
-        rLexemas.setForeground(new java.awt.Color(255, 255, 255));
-        rLexemas.setText("RECUENTO DE LEXEMAS");
-        rLexemas.addActionListener(new java.awt.event.ActionListener() {
+        rSucMasVen.setBackground(new java.awt.Color(0, 0, 0));
+        rSucMasVen.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        rSucMasVen.setForeground(new java.awt.Color(255, 255, 255));
+        rSucMasVen.setText("3 SUCURSALES CON MAS VENTAS");
+        rSucMasVen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rLexemasActionPerformed(evt);
+                rSucMasVenActionPerformed(evt);
             }
         });
-        jPanel4.add(rLexemas);
+        jPanel4.add(rSucMasVen);
 
-        rAFD.setBackground(new java.awt.Color(0, 0, 0));
-        rAFD.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
-        rAFD.setForeground(new java.awt.Color(255, 255, 255));
-        rAFD.setText("AFD OPTIMO");
-        rAFD.addActionListener(new java.awt.event.ActionListener() {
+        rProMasIng.setBackground(new java.awt.Color(0, 0, 0));
+        rProMasIng.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        rProMasIng.setForeground(new java.awt.Color(255, 255, 255));
+        rProMasIng.setText("10 PRODUCTOS CON MAS INGRESOS");
+        rProMasIng.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rAFDActionPerformed(evt);
+                rProMasIngActionPerformed(evt);
             }
         });
-        jPanel4.add(rAFD);
+        jPanel4.add(rProMasIng);
 
-        jLabel8.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel4.add(jLabel8);
-
-        analisisSintactico.setBackground(new java.awt.Color(0, 0, 0));
-        analisisSintactico.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
-        analisisSintactico.setForeground(new java.awt.Color(255, 255, 255));
-        analisisSintactico.setText("ANALISIS SINTACTICO");
-        analisisSintactico.addActionListener(new java.awt.event.ActionListener() {
+        rSucMasIng.setBackground(new java.awt.Color(0, 0, 0));
+        rSucMasIng.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        rSucMasIng.setForeground(new java.awt.Color(255, 255, 255));
+        rSucMasIng.setText("3 SUCURSALES CON MAS INGRESOS");
+        rSucMasIng.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                analisisSintacticoActionPerformed(evt);
+                rSucMasIngActionPerformed(evt);
             }
         });
-        jPanel4.add(analisisSintactico);
+        jPanel4.add(rSucMasIng);
+
+        rProdMasVenSuc.setBackground(new java.awt.Color(0, 0, 0));
+        rProdMasVenSuc.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        rProdMasVenSuc.setForeground(new java.awt.Color(255, 255, 255));
+        rProdMasVenSuc.setText("5 PRODUCTOS MAS VENDIDOS POR SUCURSAL");
+        rProdMasVenSuc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rProdMasVenSucActionPerformed(evt);
+            }
+        });
+        jPanel4.add(rProdMasVenSuc);
+
+        rEmpMasVen.setBackground(new java.awt.Color(0, 0, 0));
+        rEmpMasVen.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        rEmpMasVen.setForeground(new java.awt.Color(255, 255, 255));
+        rEmpMasVen.setText("3 EMPLEADOS CON MAS VENTAS");
+        rEmpMasVen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rEmpMasVenActionPerformed(evt);
+            }
+        });
+        jPanel4.add(rEmpMasVen);
+
+        rProMasIngSuc.setBackground(new java.awt.Color(0, 0, 0));
+        rProMasIngSuc.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        rProMasIngSuc.setForeground(new java.awt.Color(255, 255, 255));
+        rProMasIngSuc.setText("5 PRODUCTOS CON MAS INGRESOS POR SUCURSAL");
+        rProMasIngSuc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rProMasIngSucActionPerformed(evt);
+            }
+        });
+        jPanel4.add(rProMasIngSuc);
+
+        rEmpMasIng.setBackground(new java.awt.Color(0, 0, 0));
+        rEmpMasIng.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        rEmpMasIng.setForeground(new java.awt.Color(255, 255, 255));
+        rEmpMasIng.setText("3 EMPLEADOS CON MAS INGRESOS");
+        rEmpMasIng.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rEmpMasIngActionPerformed(evt);
+            }
+        });
+        jPanel4.add(rEmpMasIng);
 
         jPanel3.add(jPanel4, java.awt.BorderLayout.CENTER);
 
@@ -157,7 +202,7 @@ public class ReportesGUI extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 586, Short.MAX_VALUE)
+            .addGap(0, 1270, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -177,48 +222,63 @@ public class ReportesGUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void rErroresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rErroresActionPerformed
-    //    principal.reporteErrores();
-    }//GEN-LAST:event_rErroresActionPerformed
+    private void rProdMasVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rProdMasVActionPerformed
+        p.getCtrlRepo().launchReport("ProdMasV");
+    }//GEN-LAST:event_rProdMasVActionPerformed
 
-    private void rTokensActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rTokensActionPerformed
-    //   principal.reporteTokens();
-    }//GEN-LAST:event_rTokensActionPerformed
+    private void rClieMasGanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rClieMasGanActionPerformed
+        p.getCtrlRepo().launchReport("ClieMasGan");
+    }//GEN-LAST:event_rClieMasGanActionPerformed
 
-    private void rLexemasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rLexemasActionPerformed
-      //  principal.recuentoLexemas();
-    }//GEN-LAST:event_rLexemasActionPerformed
+    private void rSucMasVenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSucMasVenActionPerformed
+         p.getCtrlRepo().launchReport("SucMasVen");
+    }//GEN-LAST:event_rSucMasVenActionPerformed
 
-    private void rAFDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rAFDActionPerformed
-        //principal.reporteAFD();
-    }//GEN-LAST:event_rAFDActionPerformed
+    private void rEmpMasVenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rEmpMasVenActionPerformed
+        p.getCtrlRepo().launchReport("EmpMasVen");
+    }//GEN-LAST:event_rEmpMasVenActionPerformed
 
-    private void analisisSintacticoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_analisisSintacticoActionPerformed
-       // principal.analisisSintactico();
-    }//GEN-LAST:event_analisisSintacticoActionPerformed
+    private void rProMasIngActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rProMasIngActionPerformed
+        p.getCtrlRepo().launchReport("ProMasIng");
+    }//GEN-LAST:event_rProMasIngActionPerformed
+
+    private void rProdMasVenSucActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rProdMasVenSucActionPerformed
+       p.getCtrlRepo().launchReport("ProdMasVenSuc");
+    }//GEN-LAST:event_rProdMasVenSucActionPerformed
+
+    private void rProMasIngSucActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rProMasIngSucActionPerformed
+        p.getCtrlRepo().launchReport("ProMasIngSuc");
+    }//GEN-LAST:event_rProMasIngSucActionPerformed
+
+    private void rEmpMasIngActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rEmpMasIngActionPerformed
+        p.getCtrlRepo().launchReport("EmpMasIng");
+    }//GEN-LAST:event_rEmpMasIngActionPerformed
+
+    private void rSucMasIngActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSucMasIngActionPerformed
+       p.getCtrlRepo().launchReport("SucMasIng");
+    }//GEN-LAST:event_rSucMasIngActionPerformed
 
     public JButton getrAFD() {
-        return rAFD;
+        return rEmpMasVen;
     }
 
     public JButton getrErrores() {
-        return rErrores;
+        return rProdMasV;
     }
 
     public JButton getrLexemas() {
-        return rLexemas;
+        return rSucMasVen;
     }
 
     public JButton getrTokens() {
-        return rTokens;
+        return rClieMasGan;
     }
 
     public JButton getAnalisisSintactico() {
-        return analisisSintactico;
+        return rProMasIng;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton analisisSintactico;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -226,14 +286,18 @@ public class ReportesGUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JButton rAFD;
-    private javax.swing.JButton rErrores;
-    private javax.swing.JButton rLexemas;
-    private javax.swing.JButton rTokens;
+    private javax.swing.JButton rClieMasGan;
+    private javax.swing.JButton rEmpMasIng;
+    private javax.swing.JButton rEmpMasVen;
+    private javax.swing.JButton rProMasIng;
+    private javax.swing.JButton rProMasIngSuc;
+    private javax.swing.JButton rProdMasV;
+    private javax.swing.JButton rProdMasVenSuc;
+    private javax.swing.JButton rSucMasIng;
+    private javax.swing.JButton rSucMasVen;
     // End of variables declaration//GEN-END:variables
 }

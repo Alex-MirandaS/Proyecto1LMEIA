@@ -19,6 +19,8 @@ public class Admin extends javax.swing.JFrame {
     public Admin(Principal p) {
         this.p = p;
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.setExtendedState(this.MAXIMIZED_BOTH);
     }
 
     /**
@@ -30,7 +32,6 @@ public class Admin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         jPanel13 = new javax.swing.JPanel();
         jPanel14 = new javax.swing.JPanel();
         jLabel31 = new javax.swing.JLabel();
@@ -49,29 +50,43 @@ public class Admin extends javax.swing.JFrame {
         table = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Administrador");
 
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("ADMINISTRADOR");
-        getContentPane().add(jLabel1, java.awt.BorderLayout.PAGE_START);
-
+        jPanel13.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel13.setForeground(new java.awt.Color(153, 153, 153));
         jPanel13.setLayout(new java.awt.BorderLayout());
 
+        jPanel14.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel14.setForeground(new java.awt.Color(153, 153, 153));
         jPanel14.setLayout(new java.awt.BorderLayout());
 
+        jLabel31.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel31.setForeground(new java.awt.Color(153, 153, 153));
         jLabel31.setText(" ");
         jPanel14.add(jLabel31, java.awt.BorderLayout.PAGE_START);
 
+        jLabel32.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel32.setForeground(new java.awt.Color(153, 153, 153));
         jLabel32.setText(" ");
         jPanel14.add(jLabel32, java.awt.BorderLayout.PAGE_END);
 
+        jLabel33.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel33.setForeground(new java.awt.Color(153, 153, 153));
         jLabel33.setText("          ");
         jPanel14.add(jLabel33, java.awt.BorderLayout.LINE_END);
 
+        jLabel34.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel34.setForeground(new java.awt.Color(153, 153, 153));
         jLabel34.setText("          ");
         jPanel14.add(jLabel34, java.awt.BorderLayout.LINE_START);
 
+        jPanel38.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel38.setForeground(new java.awt.Color(153, 153, 153));
         jPanel38.setLayout(new java.awt.GridLayout(1, 6));
 
+        agSucursal.setBackground(new java.awt.Color(0, 0, 0));
+        agSucursal.setFont(new java.awt.Font("Courier 10 Pitch", 1, 12)); // NOI18N
+        agSucursal.setForeground(new java.awt.Color(153, 153, 153));
         agSucursal.setText("AGREGAR SUCURSAL");
         agSucursal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -80,6 +95,9 @@ public class Admin extends javax.swing.JFrame {
         });
         jPanel38.add(agSucursal);
 
+        agEmpleado.setBackground(new java.awt.Color(0, 0, 0));
+        agEmpleado.setFont(new java.awt.Font("Courier 10 Pitch", 1, 12)); // NOI18N
+        agEmpleado.setForeground(new java.awt.Color(153, 153, 153));
         agEmpleado.setText("AGREGAR EMPLEADO");
         agEmpleado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -88,6 +106,9 @@ public class Admin extends javax.swing.JFrame {
         });
         jPanel38.add(agEmpleado);
 
+        agCliente.setBackground(new java.awt.Color(0, 0, 0));
+        agCliente.setFont(new java.awt.Font("Courier 10 Pitch", 1, 12)); // NOI18N
+        agCliente.setForeground(new java.awt.Color(153, 153, 153));
         agCliente.setText("AGREGAR CLIENTE");
         agCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -96,6 +117,9 @@ public class Admin extends javax.swing.JFrame {
         });
         jPanel38.add(agCliente);
 
+        seeReports.setBackground(new java.awt.Color(0, 0, 0));
+        seeReports.setFont(new java.awt.Font("Courier 10 Pitch", 1, 12)); // NOI18N
+        seeReports.setForeground(new java.awt.Color(153, 153, 153));
         seeReports.setText("REPORTES");
         seeReports.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -103,6 +127,9 @@ public class Admin extends javax.swing.JFrame {
             }
         });
         jPanel38.add(seeReports);
+
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.setForeground(new java.awt.Color(153, 153, 153));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -117,6 +144,9 @@ public class Admin extends javax.swing.JFrame {
 
         jPanel38.add(jPanel1);
 
+        guardar.setBackground(new java.awt.Color(0, 0, 0));
+        guardar.setFont(new java.awt.Font("Courier 10 Pitch", 1, 12)); // NOI18N
+        guardar.setForeground(new java.awt.Color(153, 153, 153));
         guardar.setText("GUARDAR");
         guardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -129,9 +159,14 @@ public class Admin extends javax.swing.JFrame {
 
         jPanel13.add(jPanel14, java.awt.BorderLayout.PAGE_END);
 
+        jLabel30.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel30.setForeground(new java.awt.Color(153, 153, 153));
         jLabel30.setText(" ");
         jPanel13.add(jLabel30, java.awt.BorderLayout.PAGE_START);
 
+        table.setBackground(new java.awt.Color(0, 0, 0));
+        table.setFont(new java.awt.Font("Courier 10 Pitch", 1, 12)); // NOI18N
+        table.setForeground(new java.awt.Color(153, 153, 153));
         table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -165,7 +200,7 @@ public class Admin extends javax.swing.JFrame {
     }//GEN-LAST:event_agClienteActionPerformed
 
     private void seeReportsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seeReportsActionPerformed
-        // TODO add your handling code here:
+        p.getCtrlAdmin().openReports();
     }//GEN-LAST:event_seeReportsActionPerformed
 
     private void guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarActionPerformed
@@ -210,7 +245,6 @@ public class Admin extends javax.swing.JFrame {
     private javax.swing.JButton agEmpleado;
     private javax.swing.JButton agSucursal;
     private javax.swing.JButton guardar;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;

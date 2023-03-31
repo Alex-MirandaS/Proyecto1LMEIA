@@ -47,7 +47,7 @@ public class EmpleadoCRUD extends ModelCRUD {
             ResultSet result = presSt.executeQuery();
             Empleado temp;
             while (result.next()) {
-                temp = new Empleado(result.getString("cod_empleado"), result.getString("nombre"), result.getString("contraseña"),result.getString("rango"),result.getString("cod_sucursal"));
+                temp = new Empleado(result.getString("cod_empleado"), result.getString("nombre"), result.getString("contraseña"), result.getString("rango"), result.getString("cod_sucursal"));
                 returned.add(temp);
             }
 
@@ -64,7 +64,20 @@ public class EmpleadoCRUD extends ModelCRUD {
 
     @Override
     public Object getData(String id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+
+        String consult = this.selectTQ + this.table + this.whereQ + "cod_empleado = " + "'" + id + "'";
+        Object returned = null;
+
+        try ( PreparedStatement presSt = Conexion.dbConection.prepareStatement(consult)) {
+            ResultSet result = presSt.executeQuery();
+            while (result.next()) {
+                returned = new Empleado(result.getString("cod_empleado"), result.getString("nombre"), result.getString("contraseña"), result.getString("rango"), result.getString("cod_sucursal"));
+            }
+
+        } catch (Exception e) {
+            System.err.println("Error al visualizar");
+        }
+        return returned;
     }
 
     @Override

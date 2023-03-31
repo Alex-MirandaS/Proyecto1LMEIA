@@ -75,6 +75,22 @@ public class SucursalCRUD extends ModelCRUD {
         }
         return returned;
     }
+    
+        public Object getDataName(String id) {
+        String consult = this.selectTQ + this.table + this.whereQ + "nombre = " + "'"+id+"'";
+        Object returned = null;
+
+        try ( PreparedStatement presSt = Conexion.dbConection.prepareStatement(consult)) {
+            ResultSet result = presSt.executeQuery();
+            while (result.next()) {
+                returned = new Sucursal(result.getString("codigo_id"), result.getString("nombre"));
+            }
+
+        } catch (Exception e) {
+            System.err.println("Error al visualizar");
+        }
+        return returned;
+    }
 
     @Override
     protected String getSets(Object dataChange, Object dataOriginal) {

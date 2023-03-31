@@ -24,7 +24,9 @@ public class Caja_V extends javax.swing.JFrame {
         this.p = p;
         initComponents();
         this.nombre.setEditable(false);
-        this.apellido.setEditable(false); 
+        this.apellido.setEditable(false);
+        this.setLocationRelativeTo(null);
+        this.setExtendedState(this.MAXIMIZED_BOTH);
     }
 
     /**
@@ -150,28 +152,50 @@ public class Caja_V extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel2.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel2.setForeground(new java.awt.Color(153, 153, 153));
         jPanel2.setMaximumSize(new java.awt.Dimension(247, 639));
         jPanel2.setLayout(new java.awt.BorderLayout());
 
+        jPanel3.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel3.setForeground(new java.awt.Color(153, 153, 153));
         jPanel3.setLayout(new java.awt.BorderLayout());
 
+        jLabel4.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel4.setFont(new java.awt.Font("Courier 10 Pitch", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(153, 153, 153));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("INGRESO POR BUSQUEDA DE PRODUCTO");
         jPanel3.add(jLabel4, java.awt.BorderLayout.PAGE_START);
 
+        jPanel19.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel19.setForeground(new java.awt.Color(153, 153, 153));
         jPanel19.setLayout(new java.awt.GridLayout(1, 3));
 
+        jPanel20.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel20.setForeground(new java.awt.Color(153, 153, 153));
         jPanel20.setLayout(new java.awt.BorderLayout());
 
+        jLabel16.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel16.setForeground(new java.awt.Color(153, 153, 153));
         jLabel16.setText("  ");
         jPanel20.add(jLabel16, java.awt.BorderLayout.PAGE_END);
 
+        jPanel28.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel28.setForeground(new java.awt.Color(153, 153, 153));
         jPanel28.setLayout(new java.awt.BorderLayout());
 
+        jLabel17.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel17.setForeground(new java.awt.Color(153, 153, 153));
         jLabel17.setText("   ");
         jPanel28.add(jLabel17, java.awt.BorderLayout.PAGE_END);
 
+        jPanel29.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel29.setForeground(new java.awt.Color(153, 153, 153));
         jPanel29.setLayout(new java.awt.GridLayout(1, 3));
+
+        jPanel30.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel30.setForeground(new java.awt.Color(153, 153, 153));
 
         javax.swing.GroupLayout jPanel30Layout = new javax.swing.GroupLayout(jPanel30);
         jPanel30.setLayout(jPanel30Layout);
@@ -185,6 +209,9 @@ public class Caja_V extends javax.swing.JFrame {
         );
 
         jPanel29.add(jPanel30);
+
+        jPanel31.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel31.setForeground(new java.awt.Color(153, 153, 153));
 
         javax.swing.GroupLayout jPanel31Layout = new javax.swing.GroupLayout(jPanel31);
         jPanel31.setLayout(jPanel31Layout);
@@ -207,14 +234,23 @@ public class Caja_V extends javax.swing.JFrame {
 
         jPanel3.add(jPanel19, java.awt.BorderLayout.PAGE_END);
 
+        jPanel22.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel22.setForeground(new java.awt.Color(153, 153, 153));
         jPanel22.setLayout(new java.awt.BorderLayout());
 
+        jLabel9.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel9.setForeground(new java.awt.Color(153, 153, 153));
         jLabel9.setText("     ");
         jPanel22.add(jLabel9, java.awt.BorderLayout.LINE_START);
 
+        jLabel12.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel12.setForeground(new java.awt.Color(153, 153, 153));
         jLabel12.setText("     ");
         jPanel22.add(jLabel12, java.awt.BorderLayout.LINE_END);
 
+        listProductos.setBackground(new java.awt.Color(102, 102, 102));
+        listProductos.setFont(new java.awt.Font("Courier 10 Pitch", 1, 14)); // NOI18N
+        listProductos.setForeground(new java.awt.Color(153, 153, 153));
         listProductos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         listProductos.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
@@ -227,29 +263,50 @@ public class Caja_V extends javax.swing.JFrame {
 
         jPanel2.add(jPanel3, java.awt.BorderLayout.PAGE_END);
 
+        jPanel32.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel32.setForeground(new java.awt.Color(153, 153, 153));
         jPanel32.setLayout(new java.awt.GridLayout(6, 1));
 
+        jPanel33.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel33.setForeground(new java.awt.Color(153, 153, 153));
         jPanel33.setLayout(new java.awt.BorderLayout());
 
+        jLabel18.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel18.setForeground(new java.awt.Color(153, 153, 153));
         jLabel18.setText(" ");
         jPanel33.add(jLabel18, java.awt.BorderLayout.LINE_END);
 
+        jLabel19.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel19.setForeground(new java.awt.Color(153, 153, 153));
         jLabel19.setText(" ");
         jPanel33.add(jLabel19, java.awt.BorderLayout.LINE_START);
+
+        codProd.setBackground(new java.awt.Color(102, 102, 102));
+        codProd.setForeground(new java.awt.Color(153, 153, 153));
         jPanel33.add(codProd, java.awt.BorderLayout.CENTER);
 
         jPanel32.add(jPanel33);
 
+        jPanel34.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel34.setForeground(new java.awt.Color(153, 153, 153));
         jPanel34.setLayout(new java.awt.BorderLayout());
 
+        jLabel13.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel13.setForeground(new java.awt.Color(153, 153, 153));
         jLabel13.setText("    ");
         jPanel34.add(jLabel13, java.awt.BorderLayout.LINE_END);
 
+        jLabel14.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel14.setForeground(new java.awt.Color(153, 153, 153));
         jLabel14.setText("    ");
         jPanel34.add(jLabel14, java.awt.BorderLayout.LINE_START);
 
+        jPanel16.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel16.setForeground(new java.awt.Color(153, 153, 153));
         jPanel16.setLayout(new java.awt.GridLayout(1, 3));
 
+        jButton1.setBackground(new java.awt.Color(0, 0, 0));
+        jButton1.setForeground(new java.awt.Color(153, 153, 153));
         jButton1.setText("7");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -258,6 +315,8 @@ public class Caja_V extends javax.swing.JFrame {
         });
         jPanel16.add(jButton1);
 
+        jButton2.setBackground(new java.awt.Color(0, 0, 0));
+        jButton2.setForeground(new java.awt.Color(153, 153, 153));
         jButton2.setText("8");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -266,6 +325,8 @@ public class Caja_V extends javax.swing.JFrame {
         });
         jPanel16.add(jButton2);
 
+        jButton3.setBackground(new java.awt.Color(0, 0, 0));
+        jButton3.setForeground(new java.awt.Color(153, 153, 153));
         jButton3.setText("9");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -278,18 +339,30 @@ public class Caja_V extends javax.swing.JFrame {
 
         jPanel32.add(jPanel34);
 
+        jPanel35.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel35.setForeground(new java.awt.Color(153, 153, 153));
         jPanel35.setLayout(new java.awt.BorderLayout());
 
+        jPanel40.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel40.setForeground(new java.awt.Color(153, 153, 153));
         jPanel40.setLayout(new java.awt.BorderLayout());
 
+        jLabel15.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel15.setForeground(new java.awt.Color(153, 153, 153));
         jLabel15.setText("    ");
         jPanel40.add(jLabel15, java.awt.BorderLayout.LINE_END);
 
+        jLabel20.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel20.setForeground(new java.awt.Color(153, 153, 153));
         jLabel20.setText("    ");
         jPanel40.add(jLabel20, java.awt.BorderLayout.LINE_START);
 
+        jPanel21.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel21.setForeground(new java.awt.Color(153, 153, 153));
         jPanel21.setLayout(new java.awt.GridLayout(1, 3));
 
+        jButton4.setBackground(new java.awt.Color(0, 0, 0));
+        jButton4.setForeground(new java.awt.Color(153, 153, 153));
         jButton4.setText("4");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -298,6 +371,8 @@ public class Caja_V extends javax.swing.JFrame {
         });
         jPanel21.add(jButton4);
 
+        jButton5.setBackground(new java.awt.Color(0, 0, 0));
+        jButton5.setForeground(new java.awt.Color(153, 153, 153));
         jButton5.setText("5");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -306,6 +381,8 @@ public class Caja_V extends javax.swing.JFrame {
         });
         jPanel21.add(jButton5);
 
+        jButton6.setBackground(new java.awt.Color(0, 0, 0));
+        jButton6.setForeground(new java.awt.Color(153, 153, 153));
         jButton6.setText("6");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -320,18 +397,30 @@ public class Caja_V extends javax.swing.JFrame {
 
         jPanel32.add(jPanel35);
 
+        jPanel36.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel36.setForeground(new java.awt.Color(153, 153, 153));
         jPanel36.setLayout(new java.awt.BorderLayout());
 
+        jPanel41.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel41.setForeground(new java.awt.Color(153, 153, 153));
         jPanel41.setLayout(new java.awt.BorderLayout());
 
+        jLabel21.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel21.setForeground(new java.awt.Color(153, 153, 153));
         jLabel21.setText("    ");
         jPanel41.add(jLabel21, java.awt.BorderLayout.LINE_END);
 
+        jLabel22.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel22.setForeground(new java.awt.Color(153, 153, 153));
         jLabel22.setText("    ");
         jPanel41.add(jLabel22, java.awt.BorderLayout.LINE_START);
 
+        jPanel23.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel23.setForeground(new java.awt.Color(153, 153, 153));
         jPanel23.setLayout(new java.awt.GridLayout(1, 3));
 
+        jButton7.setBackground(new java.awt.Color(0, 0, 0));
+        jButton7.setForeground(new java.awt.Color(153, 153, 153));
         jButton7.setText("1");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -340,6 +429,8 @@ public class Caja_V extends javax.swing.JFrame {
         });
         jPanel23.add(jButton7);
 
+        jButton8.setBackground(new java.awt.Color(0, 0, 0));
+        jButton8.setForeground(new java.awt.Color(153, 153, 153));
         jButton8.setText("2");
         jButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -348,6 +439,8 @@ public class Caja_V extends javax.swing.JFrame {
         });
         jPanel23.add(jButton8);
 
+        jButton9.setBackground(new java.awt.Color(0, 0, 0));
+        jButton9.setForeground(new java.awt.Color(153, 153, 153));
         jButton9.setText("3");
         jButton9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -362,18 +455,30 @@ public class Caja_V extends javax.swing.JFrame {
 
         jPanel32.add(jPanel36);
 
+        jPanel37.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel37.setForeground(new java.awt.Color(153, 153, 153));
         jPanel37.setLayout(new java.awt.BorderLayout());
 
+        jPanel42.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel42.setForeground(new java.awt.Color(153, 153, 153));
         jPanel42.setLayout(new java.awt.BorderLayout());
 
+        jLabel23.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel23.setForeground(new java.awt.Color(153, 153, 153));
         jLabel23.setText("    ");
         jPanel42.add(jLabel23, java.awt.BorderLayout.LINE_END);
 
+        jLabel24.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel24.setForeground(new java.awt.Color(153, 153, 153));
         jLabel24.setText("    ");
         jPanel42.add(jLabel24, java.awt.BorderLayout.LINE_START);
 
+        jPanel24.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel24.setForeground(new java.awt.Color(153, 153, 153));
         jPanel24.setLayout(new java.awt.GridLayout(1, 3));
 
+        jButton10.setBackground(new java.awt.Color(0, 0, 0));
+        jButton10.setForeground(new java.awt.Color(153, 153, 153));
         jButton10.setText("0");
         jButton10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -382,6 +487,8 @@ public class Caja_V extends javax.swing.JFrame {
         });
         jPanel24.add(jButton10);
 
+        jButton11.setBackground(new java.awt.Color(0, 0, 0));
+        jButton11.setForeground(new java.awt.Color(153, 153, 153));
         jButton11.setText("P");
         jButton11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -390,6 +497,8 @@ public class Caja_V extends javax.swing.JFrame {
         });
         jPanel24.add(jButton11);
 
+        jButton12.setBackground(new java.awt.Color(0, 0, 0));
+        jButton12.setForeground(new java.awt.Color(153, 153, 153));
         jButton12.setText(".");
         jPanel24.add(jButton12);
 
@@ -399,35 +508,63 @@ public class Caja_V extends javax.swing.JFrame {
 
         jPanel32.add(jPanel37);
 
+        jPanel39.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel39.setForeground(new java.awt.Color(153, 153, 153));
         jPanel39.setLayout(new java.awt.BorderLayout());
 
+        jLabel25.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel25.setForeground(new java.awt.Color(153, 153, 153));
         jLabel25.setText("  ");
         jPanel39.add(jLabel25, java.awt.BorderLayout.PAGE_START);
 
+        jLabel26.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel26.setForeground(new java.awt.Color(153, 153, 153));
         jLabel26.setText("     ");
         jPanel39.add(jLabel26, java.awt.BorderLayout.LINE_END);
 
+        jLabel27.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel27.setForeground(new java.awt.Color(153, 153, 153));
         jLabel27.setText("     ");
         jPanel39.add(jLabel27, java.awt.BorderLayout.LINE_START);
 
+        jPanel25.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel25.setForeground(new java.awt.Color(153, 153, 153));
         jPanel25.setLayout(new java.awt.GridLayout(2, 2));
 
+        jPanel26.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel26.setForeground(new java.awt.Color(153, 153, 153));
         jPanel26.setLayout(new java.awt.BorderLayout());
 
+        jLabel28.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel28.setForeground(new java.awt.Color(153, 153, 153));
         jLabel28.setText(" ");
         jPanel26.add(jLabel28, java.awt.BorderLayout.PAGE_END);
 
+        jPanel45.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel45.setForeground(new java.awt.Color(153, 153, 153));
         jPanel45.setLayout(new java.awt.GridLayout(1, 2));
 
+        jLabel29.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel29.setFont(new java.awt.Font("Courier 10 Pitch", 1, 14)); // NOI18N
+        jLabel29.setForeground(new java.awt.Color(153, 153, 153));
         jLabel29.setText("CANTIDAD");
         jPanel45.add(jLabel29);
+
+        cantProd.setBackground(new java.awt.Color(102, 102, 102));
+        cantProd.setFont(new java.awt.Font("Chandas", 1, 12)); // NOI18N
+        cantProd.setForeground(new java.awt.Color(153, 153, 153));
         jPanel45.add(cantProd);
 
         jPanel26.add(jPanel45, java.awt.BorderLayout.CENTER);
 
         jPanel25.add(jPanel26);
 
+        jPanel27.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel27.setForeground(new java.awt.Color(153, 153, 153));
         jPanel27.setLayout(new java.awt.GridLayout(1, 3));
+
+        jPanel43.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel43.setForeground(new java.awt.Color(153, 153, 153));
 
         javax.swing.GroupLayout jPanel43Layout = new javax.swing.GroupLayout(jPanel43);
         jPanel43.setLayout(jPanel43Layout);
@@ -437,11 +574,14 @@ public class Caja_V extends javax.swing.JFrame {
         );
         jPanel43Layout.setVerticalGroup(
             jPanel43Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 39, Short.MAX_VALUE)
+            .addGap(0, 61, Short.MAX_VALUE)
         );
 
         jPanel27.add(jPanel43);
 
+        jButton13.setBackground(new java.awt.Color(0, 0, 0));
+        jButton13.setFont(new java.awt.Font("Courier 10 Pitch", 1, 14)); // NOI18N
+        jButton13.setForeground(new java.awt.Color(153, 153, 153));
         jButton13.setText("ENTER");
         jButton13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -449,6 +589,9 @@ public class Caja_V extends javax.swing.JFrame {
             }
         });
         jPanel27.add(jButton13);
+
+        jPanel44.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel44.setForeground(new java.awt.Color(153, 153, 153));
 
         javax.swing.GroupLayout jPanel44Layout = new javax.swing.GroupLayout(jPanel44);
         jPanel44.setLayout(jPanel44Layout);
@@ -458,7 +601,7 @@ public class Caja_V extends javax.swing.JFrame {
         );
         jPanel44Layout.setVerticalGroup(
             jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 39, Short.MAX_VALUE)
+            .addGap(0, 61, Short.MAX_VALUE)
         );
 
         jPanel27.add(jPanel44);
@@ -473,10 +616,15 @@ public class Caja_V extends javax.swing.JFrame {
 
         getContentPane().add(jPanel2, java.awt.BorderLayout.LINE_END);
 
+        jPanel15.setBackground(new java.awt.Color(0, 0, 0));
         jPanel15.setLayout(new java.awt.GridLayout(2, 1));
 
+        jPanel17.setBackground(new java.awt.Color(0, 0, 0));
         jPanel17.setLayout(new java.awt.BorderLayout());
 
+        jLabel5.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel5.setFont(new java.awt.Font("Z003", 1, 48)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(153, 153, 153));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("ELECTRONIC HOMES");
         jPanel17.add(jLabel5, java.awt.BorderLayout.CENTER);
@@ -485,10 +633,15 @@ public class Caja_V extends javax.swing.JFrame {
 
         jPanel18.setLayout(new java.awt.GridLayout(1, 2));
 
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
         jPanel1.setLayout(new java.awt.GridLayout(4, 2));
 
+        jPanel5.setBackground(new java.awt.Color(0, 0, 0));
         jPanel5.setLayout(new java.awt.BorderLayout());
 
+        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel1.setFont(new java.awt.Font("Courier 10 Pitch", 1, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(153, 153, 153));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("NIT");
         jPanel5.add(jLabel1, java.awt.BorderLayout.CENTER);
@@ -497,6 +650,9 @@ public class Caja_V extends javax.swing.JFrame {
 
         jPanel6.setLayout(new java.awt.BorderLayout());
 
+        nit.setBackground(new java.awt.Color(102, 102, 102));
+        nit.setFont(new java.awt.Font("Courier 10 Pitch", 1, 12)); // NOI18N
+        nit.setForeground(new java.awt.Color(153, 153, 153));
         nit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nitActionPerformed(evt);
@@ -511,8 +667,12 @@ public class Caja_V extends javax.swing.JFrame {
 
         jPanel1.add(jPanel6);
 
+        jPanel7.setBackground(new java.awt.Color(0, 0, 0));
         jPanel7.setLayout(new java.awt.BorderLayout());
 
+        jLabel2.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel2.setFont(new java.awt.Font("Courier 10 Pitch", 1, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(153, 153, 153));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("NOMBRE");
         jPanel7.add(jLabel2, java.awt.BorderLayout.CENTER);
@@ -520,12 +680,20 @@ public class Caja_V extends javax.swing.JFrame {
         jPanel1.add(jPanel7);
 
         jPanel8.setLayout(new java.awt.BorderLayout());
+
+        nombre.setBackground(new java.awt.Color(102, 102, 102));
+        nombre.setFont(new java.awt.Font("Courier 10 Pitch", 1, 12)); // NOI18N
+        nombre.setForeground(new java.awt.Color(153, 153, 153));
         jPanel8.add(nombre, java.awt.BorderLayout.CENTER);
 
         jPanel1.add(jPanel8);
 
+        jPanel9.setBackground(new java.awt.Color(0, 0, 0));
         jPanel9.setLayout(new java.awt.BorderLayout());
 
+        jLabel3.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel3.setFont(new java.awt.Font("Courier 10 Pitch", 1, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(153, 153, 153));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("APELLIDO");
         jPanel9.add(jLabel3, java.awt.BorderLayout.CENTER);
@@ -533,10 +701,17 @@ public class Caja_V extends javax.swing.JFrame {
         jPanel1.add(jPanel9);
 
         jPanel10.setLayout(new java.awt.BorderLayout());
+
+        apellido.setBackground(new java.awt.Color(102, 102, 102));
+        apellido.setFont(new java.awt.Font("Courier 10 Pitch", 1, 12)); // NOI18N
+        apellido.setForeground(new java.awt.Color(153, 153, 153));
         jPanel10.add(apellido, java.awt.BorderLayout.CENTER);
 
         jPanel1.add(jPanel10);
 
+        agg.setBackground(new java.awt.Color(0, 0, 0));
+        agg.setFont(new java.awt.Font("Courier 10 Pitch", 1, 12)); // NOI18N
+        agg.setForeground(new java.awt.Color(153, 153, 153));
         agg.setText("Agregar");
         agg.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -545,6 +720,9 @@ public class Caja_V extends javax.swing.JFrame {
         });
         jPanel1.add(agg);
 
+        verifyNit.setBackground(new java.awt.Color(0, 0, 0));
+        verifyNit.setFont(new java.awt.Font("Courier 10 Pitch", 1, 12)); // NOI18N
+        verifyNit.setForeground(new java.awt.Color(153, 153, 153));
         verifyNit.setText("Registrar");
         verifyNit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -557,44 +735,76 @@ public class Caja_V extends javax.swing.JFrame {
 
         jPanel4.setLayout(new java.awt.GridLayout(1, 2));
 
+        jPanel11.setBackground(new java.awt.Color(0, 0, 0));
         jPanel11.setLayout(new java.awt.GridLayout(6, 1));
 
+        jLabel6.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel6.setFont(new java.awt.Font("Courier 10 Pitch", 1, 12)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(153, 153, 153));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("SUCURSAL");
         jPanel11.add(jLabel6);
 
+        sucursal.setBackground(new java.awt.Color(0, 0, 0));
+        sucursal.setFont(new java.awt.Font("Courier 10 Pitch", 1, 12)); // NOI18N
+        sucursal.setForeground(new java.awt.Color(153, 153, 153));
         sucursal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jPanel11.add(sucursal);
 
+        jLabel8.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel8.setFont(new java.awt.Font("Courier 10 Pitch", 1, 12)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(153, 153, 153));
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("VENDEDOR");
         jPanel11.add(jLabel8);
 
+        nombreEmp.setBackground(new java.awt.Color(0, 0, 0));
+        nombreEmp.setFont(new java.awt.Font("Courier 10 Pitch", 1, 12)); // NOI18N
+        nombreEmp.setForeground(new java.awt.Color(153, 153, 153));
         nombreEmp.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jPanel11.add(nombreEmp);
 
+        jLabel11.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel11.setFont(new java.awt.Font("Courier 10 Pitch", 1, 12)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(153, 153, 153));
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel11.setText("CODIGO");
         jPanel11.add(jLabel11);
 
+        codEmp.setBackground(new java.awt.Color(0, 0, 0));
+        codEmp.setFont(new java.awt.Font("Courier 10 Pitch", 1, 12)); // NOI18N
+        codEmp.setForeground(new java.awt.Color(153, 153, 153));
         codEmp.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jPanel11.add(codEmp);
 
         jPanel4.add(jPanel11);
 
+        jPanel12.setBackground(new java.awt.Color(0, 0, 0));
         jPanel12.setLayout(new java.awt.GridLayout(4, 1));
 
+        jLabel7.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel7.setFont(new java.awt.Font("Courier 10 Pitch", 1, 12)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(153, 153, 153));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("NO. FACTURA");
         jPanel12.add(jLabel7);
 
+        noFact.setBackground(new java.awt.Color(0, 0, 0));
+        noFact.setFont(new java.awt.Font("Courier 10 Pitch", 1, 12)); // NOI18N
+        noFact.setForeground(new java.awt.Color(153, 153, 153));
         noFact.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jPanel12.add(noFact);
 
+        jLabel10.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel10.setFont(new java.awt.Font("Courier 10 Pitch", 1, 12)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(153, 153, 153));
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setText("FECHA DE VENTA");
         jPanel12.add(jLabel10);
 
+        fechFact.setBackground(new java.awt.Color(0, 0, 0));
+        fechFact.setFont(new java.awt.Font("Courier 10 Pitch", 1, 12)); // NOI18N
+        fechFact.setForeground(new java.awt.Color(153, 153, 153));
         fechFact.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jPanel12.add(fechFact);
 
@@ -608,24 +818,45 @@ public class Caja_V extends javax.swing.JFrame {
 
         jPanel13.setLayout(new java.awt.BorderLayout());
 
+        jPanel14.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel14.setForeground(new java.awt.Color(153, 153, 153));
         jPanel14.setLayout(new java.awt.BorderLayout());
 
+        jLabel31.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel31.setForeground(new java.awt.Color(153, 153, 153));
         jLabel31.setText(" ");
         jPanel14.add(jLabel31, java.awt.BorderLayout.PAGE_START);
 
+        jLabel32.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel32.setForeground(new java.awt.Color(153, 153, 153));
         jLabel32.setText(" ");
         jPanel14.add(jLabel32, java.awt.BorderLayout.PAGE_END);
 
+        jLabel33.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel33.setForeground(new java.awt.Color(153, 153, 153));
         jLabel33.setText("          ");
         jPanel14.add(jLabel33, java.awt.BorderLayout.LINE_END);
 
+        jLabel34.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel34.setForeground(new java.awt.Color(153, 153, 153));
         jLabel34.setText("          ");
         jPanel14.add(jLabel34, java.awt.BorderLayout.LINE_START);
 
         jPanel38.setLayout(new java.awt.GridLayout(1, 4));
 
+        facturar.setBackground(new java.awt.Color(0, 0, 0));
+        facturar.setFont(new java.awt.Font("Courier 10 Pitch", 1, 14)); // NOI18N
+        facturar.setForeground(new java.awt.Color(153, 153, 153));
         facturar.setText("FACTURAR");
+        facturar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                facturarActionPerformed(evt);
+            }
+        });
         jPanel38.add(facturar);
+
+        jPanel46.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel46.setForeground(new java.awt.Color(153, 153, 153));
 
         javax.swing.GroupLayout jPanel46Layout = new javax.swing.GroupLayout(jPanel46);
         jPanel46.setLayout(jPanel46Layout);
@@ -640,21 +871,36 @@ public class Caja_V extends javax.swing.JFrame {
 
         jPanel38.add(jPanel46);
 
+        jLabel35.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel35.setFont(new java.awt.Font("Courier 10 Pitch", 1, 14)); // NOI18N
+        jLabel35.setForeground(new java.awt.Color(153, 153, 153));
         jLabel35.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel35.setText("TOTAL");
         jPanel38.add(jLabel35);
 
+        total.setBackground(new java.awt.Color(0, 0, 0));
+        total.setFont(new java.awt.Font("Courier 10 Pitch", 1, 14)); // NOI18N
+        total.setForeground(new java.awt.Color(153, 153, 153));
         total.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        total.setText("1000");
+        total.setText("0.00");
         jPanel38.add(total);
 
         jPanel14.add(jPanel38, java.awt.BorderLayout.CENTER);
 
         jPanel13.add(jPanel14, java.awt.BorderLayout.PAGE_END);
 
+        jLabel30.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel30.setFont(new java.awt.Font("Courier 10 Pitch", 1, 12)); // NOI18N
+        jLabel30.setForeground(new java.awt.Color(153, 153, 153));
         jLabel30.setText(" ");
         jPanel13.add(jLabel30, java.awt.BorderLayout.PAGE_START);
 
+        jScrollPane2.setBackground(new java.awt.Color(0, 0, 0));
+        jScrollPane2.setForeground(new java.awt.Color(153, 153, 153));
+
+        table.setBackground(new java.awt.Color(0, 0, 0));
+        table.setFont(new java.awt.Font("Courier 10 Pitch", 1, 14)); // NOI18N
+        table.setForeground(new java.awt.Color(153, 153, 153));
         table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -680,11 +926,11 @@ public class Caja_V extends javax.swing.JFrame {
     }//GEN-LAST:event_nitActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-codProd.setText(codProd.getText()+6);
+        codProd.setText(codProd.getText() + 6);
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-codProd.setText(codProd.getText()+"P");
+        codProd.setText(codProd.getText() + "P");
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void nitKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nitKeyTyped
@@ -709,44 +955,48 @@ codProd.setText(codProd.getText()+"P");
     }//GEN-LAST:event_listProductosItemStateChanged
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        codProd.setText(codProd.getText()+7);
+        codProd.setText(codProd.getText() + 7);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-codProd.setText(codProd.getText()+8);
+        codProd.setText(codProd.getText() + 8);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-codProd.setText(codProd.getText()+9);
+        codProd.setText(codProd.getText() + 9);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-codProd.setText(codProd.getText()+4);
+        codProd.setText(codProd.getText() + 4);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-codProd.setText(codProd.getText()+5);
+        codProd.setText(codProd.getText() + 5);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-codProd.setText(codProd.getText()+1);
+        codProd.setText(codProd.getText() + 1);
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-codProd.setText(codProd.getText()+2);
+        codProd.setText(codProd.getText() + 2);
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-codProd.setText(codProd.getText()+3);
+        codProd.setText(codProd.getText() + 3);
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-codProd.setText(codProd.getText()+0);
+        codProd.setText(codProd.getText() + 0);
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
         p.getCtrlVend().addPC();
     }//GEN-LAST:event_jButton13ActionPerformed
+
+    private void facturarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_facturarActionPerformed
+        p.getCtrlVend().checkIn();
+    }//GEN-LAST:event_facturarActionPerformed
 
     public JTextField getCodProd() {
         return codProd;

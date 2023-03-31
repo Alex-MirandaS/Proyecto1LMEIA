@@ -283,10 +283,6 @@ SELECT e.nombre, sum(f.total) FROM ControlVenta.Factura AS f INNER JOIN ControlA
 SELECT p.nombre, count(*) FROM ControlVenta.Venta AS v INNER JOIN ControlProduct.Producto AS p ON v.sku_producto=p.sku GROUP BY p.nombre ORDER BY count(*) DESC LIMIT 10;
 /*Top 10 productos con más ingresos*/
 SELECT p.nombre, sum(p.precio) FROM ControlVenta.Venta AS v INNER JOIN ControlProduct.Producto AS p ON v.sku_producto=p.sku GROUP BY p.nombre ORDER BY sum(p.precio) DESC LIMIT 10;
-/*Top 10 productos más vendidos.*/
-SELECT p.nombre, count(*) FROM ControlVenta.Venta AS v INNER JOIN ControlProduct.Producto AS p ON v.sku_producto=p.sku GROUP BY p.nombre ORDER BY count(*) DESC LIMIT 10;
-/*Top 10 productos con más ingresos*/
-SELECT p.nombre, sum(p.precio) FROM ControlVenta.Venta AS v INNER JOIN ControlProduct.Producto AS p ON v.sku_producto=p.sku GROUP BY p.nombre ORDER BY sum(p.precio) DESC LIMIT 10;
 /*Top 5 productos más vendidos por sucursal*/
 SELECT p.nombre, count(*) FROM ControlVenta.Venta AS v INNER JOIN ControlProduct.Producto AS p ON v.sku_producto=p.sku INNER JOIN ControlVenta.Factura AS f ON v.num_factura=f.no_factura AND f.cod_sucursal='SUC3' GROUP BY p.nombre ORDER BY count(*) DESC LIMIT 5;
 /*Top 5 productos con más ingresos por sucursal*/
@@ -296,5 +292,3 @@ SELECT p.nombre, sum(p.precio) FROM ControlVenta.Venta AS v INNER JOIN ControlPr
 SELECT s.nombre, p.nombre, p.marca, i.cantidad  FROM ControlProduct.Inventario AS i INNER JOIN ControlAdmin.Sucursal AS s ON i.cod_sucursal=s.codigo_id INNER JOIN ControlProduct.Producto AS p ON i.sku_producto=p.sku;
 /*EXISTENCIA TOTALES DE PRODUCTOS EN UNA TIENDA*/
 SELECT p.nombre, p.marca, i.cantidad  FROM ControlProduct.Inventario AS i INNER JOIN ControlProduct.Producto AS p ON i.sku_producto=p.sku AND i.cod_sucursal='SUN0';
-
-

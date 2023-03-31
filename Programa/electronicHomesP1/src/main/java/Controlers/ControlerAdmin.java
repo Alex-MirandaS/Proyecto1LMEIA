@@ -194,4 +194,8 @@ public class ControlerAdmin {
         return cod;
     }
 
+    public void openReports() {
+       p.getReportGUI().setVisible(true);
+    }
+
 }

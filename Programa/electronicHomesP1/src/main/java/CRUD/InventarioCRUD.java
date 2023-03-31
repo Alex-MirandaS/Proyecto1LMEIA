@@ -76,6 +76,36 @@ public class InventarioCRUD extends ModelCRUD {
         return returned;
     }
 
+    public boolean updateExist(String skuProduct, String codSuc, int exis) {
+        String consult = this.updateQ + this.table + "SET cantidad = ? " + this.whereQ + " sku_producto = ? AND cod_sucursal = ?";
+        try ( PreparedStatement preSt = Conexion.dbConection.prepareStatement(consult)) {
+            preSt.setInt(1, exis);
+            preSt.setString(2, skuProduct);
+            preSt.setString(3, codSuc);
+            preSt.executeUpdate();
+            return true;
+        } catch (Exception e) {
+            System.err.println("ERROR AL EDITAR EL REGISTRO: " + e.getMessage());
+            return false;
+        }
+    }
+
+    public Inventario getRegInv(String skuProduct, String codSuc) {
+        String consult = this.selectTQ + this.table + whereQ + "sku_producto = ? AND cod_sucursal = ?";
+        Inventario returned = null;
+        try ( PreparedStatement presSt = Conexion.dbConection.prepareStatement(consult)) {
+            presSt.setString(1, skuProduct);
+            presSt.setString(2, codSuc);
+            ResultSet result = presSt.executeQuery();
+            if (result.next()) {
+                returned = new Inventario(result.getString("registro"), result.getString("sku_producto"), result.getString("cod_sucursal"), result.getInt("cantidad"));
+            }
+        } catch (Exception e) {
+            System.err.println("Error: " + e);
+        }
+        return returned;
+    }
+
     @Override
     public boolean update(Object dataChange) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody

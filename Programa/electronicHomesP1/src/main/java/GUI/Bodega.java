@@ -18,6 +18,8 @@ public class Bodega extends javax.swing.JFrame {
     public Bodega(Principal p) {
         this.p = p;
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.setExtendedState(this.MAXIMIZED_BOTH);
     }
 
     /**
@@ -29,7 +31,6 @@ public class Bodega extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
@@ -113,36 +114,55 @@ public class Bodega extends javax.swing.JFrame {
         jTable2 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("BODEGA");
-        getContentPane().add(jLabel1, java.awt.BorderLayout.PAGE_START);
+        setTitle("Bodega");
 
         jPanel1.setLayout(new java.awt.BorderLayout());
 
         jPanel8.setLayout(new java.awt.GridLayout(1, 1));
 
+        jPanel9.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel9.setForeground(new java.awt.Color(153, 153, 153));
         jPanel9.setLayout(new java.awt.BorderLayout());
 
+        jPanel10.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel10.setForeground(new java.awt.Color(153, 153, 153));
         jPanel10.setLayout(new java.awt.BorderLayout());
 
+        jLabel8.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel8.setFont(new java.awt.Font("Courier 10 Pitch", 1, 12)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(153, 153, 153));
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("INGRESO POR BUSQUEDA DE PRODUCTO");
         jPanel10.add(jLabel8, java.awt.BorderLayout.PAGE_START);
 
+        jPanel21.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel21.setForeground(new java.awt.Color(153, 153, 153));
         jPanel21.setLayout(new java.awt.GridLayout(1, 3));
 
+        jPanel22.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel22.setForeground(new java.awt.Color(153, 153, 153));
         jPanel22.setLayout(new java.awt.BorderLayout());
 
+        jLabel18.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel18.setForeground(new java.awt.Color(153, 153, 153));
         jLabel18.setText("  ");
         jPanel22.add(jLabel18, java.awt.BorderLayout.PAGE_END);
 
+        jPanel31.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel31.setForeground(new java.awt.Color(153, 153, 153));
         jPanel31.setLayout(new java.awt.BorderLayout());
 
+        jLabel19.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel19.setForeground(new java.awt.Color(153, 153, 153));
         jLabel19.setText("   ");
         jPanel31.add(jLabel19, java.awt.BorderLayout.PAGE_END);
 
+        jPanel32.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel32.setForeground(new java.awt.Color(153, 153, 153));
         jPanel32.setLayout(new java.awt.GridLayout(1, 3));
+
+        jPanel33.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel33.setForeground(new java.awt.Color(153, 153, 153));
 
         javax.swing.GroupLayout jPanel33Layout = new javax.swing.GroupLayout(jPanel33);
         jPanel33.setLayout(jPanel33Layout);
@@ -157,6 +177,9 @@ public class Bodega extends javax.swing.JFrame {
 
         jPanel32.add(jPanel33);
 
+        jPanel34.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel34.setForeground(new java.awt.Color(153, 153, 153));
+
         javax.swing.GroupLayout jPanel34Layout = new javax.swing.GroupLayout(jPanel34);
         jPanel34.setLayout(jPanel34Layout);
         jPanel34Layout.setHorizontalGroup(
@@ -170,6 +193,9 @@ public class Bodega extends javax.swing.JFrame {
 
         jPanel32.add(jPanel34);
 
+        cargarProd.setBackground(new java.awt.Color(0, 0, 0));
+        cargarProd.setFont(new java.awt.Font("Courier 10 Pitch", 1, 12)); // NOI18N
+        cargarProd.setForeground(new java.awt.Color(153, 153, 153));
         cargarProd.setText("CARGAR");
         jPanel32.add(cargarProd);
 
@@ -183,12 +209,19 @@ public class Bodega extends javax.swing.JFrame {
 
         jPanel23.setLayout(new java.awt.BorderLayout());
 
+        jLabel9.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel9.setForeground(new java.awt.Color(153, 153, 153));
         jLabel9.setText("     ");
         jPanel23.add(jLabel9, java.awt.BorderLayout.LINE_START);
 
+        jLabel12.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel12.setForeground(new java.awt.Color(153, 153, 153));
         jLabel12.setText("     ");
         jPanel23.add(jLabel12, java.awt.BorderLayout.LINE_END);
 
+        listProductos.setBackground(new java.awt.Color(0, 0, 0));
+        listProductos.setFont(new java.awt.Font("Courier 10 Pitch", 1, 12)); // NOI18N
+        listProductos.setForeground(new java.awt.Color(153, 153, 153));
         listProductos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jPanel23.add(listProductos, java.awt.BorderLayout.CENTER);
 
@@ -196,16 +229,27 @@ public class Bodega extends javax.swing.JFrame {
 
         jPanel9.add(jPanel10, java.awt.BorderLayout.PAGE_END);
 
+        jPanel35.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel35.setForeground(new java.awt.Color(153, 153, 153));
         jPanel35.setLayout(new java.awt.GridLayout(6, 1));
 
+        jPanel36.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel36.setForeground(new java.awt.Color(153, 153, 153));
         jPanel36.setLayout(new java.awt.BorderLayout());
 
+        jLabel20.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel20.setForeground(new java.awt.Color(153, 153, 153));
         jLabel20.setText(" ");
         jPanel36.add(jLabel20, java.awt.BorderLayout.LINE_END);
 
+        jLabel21.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel21.setForeground(new java.awt.Color(153, 153, 153));
         jLabel21.setText(" ");
         jPanel36.add(jLabel21, java.awt.BorderLayout.LINE_START);
 
+        codProd.setBackground(new java.awt.Color(0, 0, 0));
+        codProd.setFont(new java.awt.Font("Courier 10 Pitch", 1, 12)); // NOI18N
+        codProd.setForeground(new java.awt.Color(153, 153, 153));
         codProd.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 codProdKeyTyped(evt);
@@ -215,22 +259,37 @@ public class Bodega extends javax.swing.JFrame {
 
         jPanel35.add(jPanel36);
 
+        jPanel37.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel37.setForeground(new java.awt.Color(153, 153, 153));
         jPanel37.setLayout(new java.awt.BorderLayout());
 
+        jLabel13.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel13.setForeground(new java.awt.Color(153, 153, 153));
         jLabel13.setText("    ");
         jPanel37.add(jLabel13, java.awt.BorderLayout.LINE_END);
 
+        jLabel14.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel14.setForeground(new java.awt.Color(153, 153, 153));
         jLabel14.setText("    ");
         jPanel37.add(jLabel14, java.awt.BorderLayout.LINE_START);
 
         jPanel16.setLayout(new java.awt.GridLayout(1, 3));
 
+        jButton1.setBackground(new java.awt.Color(0, 0, 0));
+        jButton1.setFont(new java.awt.Font("Courier 10 Pitch", 1, 12)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(153, 153, 153));
         jButton1.setText("7");
         jPanel16.add(jButton1);
 
+        jButton2.setBackground(new java.awt.Color(0, 0, 0));
+        jButton2.setFont(new java.awt.Font("Courier 10 Pitch", 1, 12)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(153, 153, 153));
         jButton2.setText("8");
         jPanel16.add(jButton2);
 
+        jButton3.setBackground(new java.awt.Color(0, 0, 0));
+        jButton3.setFont(new java.awt.Font("Courier 10 Pitch", 1, 12)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(153, 153, 153));
         jButton3.setText("9");
         jPanel16.add(jButton3);
 
@@ -238,24 +297,41 @@ public class Bodega extends javax.swing.JFrame {
 
         jPanel35.add(jPanel37);
 
+        jPanel39.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel39.setForeground(new java.awt.Color(153, 153, 153));
         jPanel39.setLayout(new java.awt.BorderLayout());
 
+        jPanel40.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel40.setForeground(new java.awt.Color(153, 153, 153));
         jPanel40.setLayout(new java.awt.BorderLayout());
 
+        jLabel15.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel15.setForeground(new java.awt.Color(153, 153, 153));
         jLabel15.setText("    ");
         jPanel40.add(jLabel15, java.awt.BorderLayout.LINE_END);
 
+        jLabel22.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel22.setForeground(new java.awt.Color(153, 153, 153));
         jLabel22.setText("    ");
         jPanel40.add(jLabel22, java.awt.BorderLayout.LINE_START);
 
         jPanel24.setLayout(new java.awt.GridLayout(1, 3));
 
+        jButton4.setBackground(new java.awt.Color(0, 0, 0));
+        jButton4.setFont(new java.awt.Font("Courier 10 Pitch", 1, 12)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(153, 153, 153));
         jButton4.setText("4");
         jPanel24.add(jButton4);
 
+        jButton5.setBackground(new java.awt.Color(0, 0, 0));
+        jButton5.setFont(new java.awt.Font("Courier 10 Pitch", 1, 12)); // NOI18N
+        jButton5.setForeground(new java.awt.Color(153, 153, 153));
         jButton5.setText("5");
         jPanel24.add(jButton5);
 
+        jButton6.setBackground(new java.awt.Color(0, 0, 0));
+        jButton6.setFont(new java.awt.Font("Courier 10 Pitch", 1, 12)); // NOI18N
+        jButton6.setForeground(new java.awt.Color(153, 153, 153));
         jButton6.setText("6");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -270,24 +346,41 @@ public class Bodega extends javax.swing.JFrame {
 
         jPanel35.add(jPanel39);
 
+        jPanel41.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel41.setForeground(new java.awt.Color(153, 153, 153));
         jPanel41.setLayout(new java.awt.BorderLayout());
 
+        jPanel42.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel42.setForeground(new java.awt.Color(153, 153, 153));
         jPanel42.setLayout(new java.awt.BorderLayout());
 
+        jLabel23.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel23.setForeground(new java.awt.Color(153, 153, 153));
         jLabel23.setText("    ");
         jPanel42.add(jLabel23, java.awt.BorderLayout.LINE_END);
 
+        jLabel24.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel24.setForeground(new java.awt.Color(153, 153, 153));
         jLabel24.setText("    ");
         jPanel42.add(jLabel24, java.awt.BorderLayout.LINE_START);
 
         jPanel25.setLayout(new java.awt.GridLayout(1, 3));
 
+        jButton7.setBackground(new java.awt.Color(0, 0, 0));
+        jButton7.setFont(new java.awt.Font("Courier 10 Pitch", 1, 12)); // NOI18N
+        jButton7.setForeground(new java.awt.Color(153, 153, 153));
         jButton7.setText("1");
         jPanel25.add(jButton7);
 
+        jButton8.setBackground(new java.awt.Color(0, 0, 0));
+        jButton8.setFont(new java.awt.Font("Courier 10 Pitch", 1, 12)); // NOI18N
+        jButton8.setForeground(new java.awt.Color(153, 153, 153));
         jButton8.setText("2");
         jPanel25.add(jButton8);
 
+        jButton9.setBackground(new java.awt.Color(0, 0, 0));
+        jButton9.setFont(new java.awt.Font("Courier 10 Pitch", 1, 12)); // NOI18N
+        jButton9.setForeground(new java.awt.Color(153, 153, 153));
         jButton9.setText("3");
         jPanel25.add(jButton9);
 
@@ -297,21 +390,37 @@ public class Bodega extends javax.swing.JFrame {
 
         jPanel35.add(jPanel41);
 
+        jPanel43.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel43.setForeground(new java.awt.Color(153, 153, 153));
         jPanel43.setLayout(new java.awt.BorderLayout());
 
+        jPanel44.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel44.setForeground(new java.awt.Color(153, 153, 153));
         jPanel44.setLayout(new java.awt.BorderLayout());
 
+        jLabel25.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel25.setForeground(new java.awt.Color(153, 153, 153));
         jLabel25.setText("    ");
         jPanel44.add(jLabel25, java.awt.BorderLayout.LINE_END);
 
+        jLabel26.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel26.setForeground(new java.awt.Color(153, 153, 153));
         jLabel26.setText("    ");
         jPanel44.add(jLabel26, java.awt.BorderLayout.LINE_START);
 
+        jPanel26.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel26.setForeground(new java.awt.Color(153, 153, 153));
         jPanel26.setLayout(new java.awt.GridLayout(1, 3));
 
+        jButton10.setBackground(new java.awt.Color(0, 0, 0));
+        jButton10.setFont(new java.awt.Font("Courier 10 Pitch", 1, 12)); // NOI18N
+        jButton10.setForeground(new java.awt.Color(153, 153, 153));
         jButton10.setText("0");
         jPanel26.add(jButton10);
 
+        jButton11.setBackground(new java.awt.Color(0, 0, 0));
+        jButton11.setFont(new java.awt.Font("Courier 10 Pitch", 1, 12)); // NOI18N
+        jButton11.setForeground(new java.awt.Color(153, 153, 153));
         jButton11.setText("P");
         jButton11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -320,6 +429,9 @@ public class Bodega extends javax.swing.JFrame {
         });
         jPanel26.add(jButton11);
 
+        jButton12.setBackground(new java.awt.Color(0, 0, 0));
+        jButton12.setFont(new java.awt.Font("Courier 10 Pitch", 1, 12)); // NOI18N
+        jButton12.setForeground(new java.awt.Color(153, 153, 153));
         jButton12.setText(".");
         jPanel26.add(jButton12);
 
@@ -329,39 +441,68 @@ public class Bodega extends javax.swing.JFrame {
 
         jPanel35.add(jPanel43);
 
+        jPanel45.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel45.setForeground(new java.awt.Color(153, 153, 153));
         jPanel45.setLayout(new java.awt.BorderLayout());
 
+        jLabel27.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel27.setForeground(new java.awt.Color(153, 153, 153));
         jLabel27.setText("  ");
         jPanel45.add(jLabel27, java.awt.BorderLayout.PAGE_START);
 
+        jLabel28.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel28.setForeground(new java.awt.Color(153, 153, 153));
         jLabel28.setText("     ");
         jPanel45.add(jLabel28, java.awt.BorderLayout.LINE_END);
 
+        jLabel29.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel29.setForeground(new java.awt.Color(153, 153, 153));
         jLabel29.setText("     ");
         jPanel45.add(jLabel29, java.awt.BorderLayout.LINE_START);
 
+        jLabel10.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel10.setForeground(new java.awt.Color(153, 153, 153));
         jLabel10.setText("  ");
         jPanel45.add(jLabel10, java.awt.BorderLayout.PAGE_END);
 
         jPanel11.setLayout(new java.awt.GridLayout(3, 2));
 
+        jLabel11.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel11.setFont(new java.awt.Font("Courier 10 Pitch", 1, 12)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(153, 153, 153));
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel11.setText("NOMBRE");
         jPanel11.add(jLabel11);
 
+        jLabel36.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel36.setFont(new java.awt.Font("Courier 10 Pitch", 1, 12)); // NOI18N
+        jLabel36.setForeground(new java.awt.Color(153, 153, 153));
         jLabel36.setText("productName");
         jPanel11.add(jLabel36);
 
+        jLabel37.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel37.setFont(new java.awt.Font("Courier 10 Pitch", 1, 12)); // NOI18N
+        jLabel37.setForeground(new java.awt.Color(153, 153, 153));
         jLabel37.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel37.setText("EXISTENCIAS");
         jPanel11.add(jLabel37);
 
+        jLabel38.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel38.setFont(new java.awt.Font("Courier 10 Pitch", 1, 12)); // NOI18N
+        jLabel38.setForeground(new java.awt.Color(153, 153, 153));
         jLabel38.setText("counts");
         jPanel11.add(jLabel38);
 
+        jLabel39.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel39.setFont(new java.awt.Font("Courier 10 Pitch", 1, 12)); // NOI18N
+        jLabel39.setForeground(new java.awt.Color(153, 153, 153));
         jLabel39.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel39.setText("AGREGAR");
         jPanel11.add(jLabel39);
+
+        cantidadProductos.setBackground(new java.awt.Color(0, 0, 0));
+        cantidadProductos.setFont(new java.awt.Font("Courier 10 Pitch", 1, 12)); // NOI18N
+        cantidadProductos.setForeground(new java.awt.Color(153, 153, 153));
         jPanel11.add(cantidadProductos);
 
         jPanel45.add(jPanel11, java.awt.BorderLayout.CENTER);
@@ -376,40 +517,68 @@ public class Bodega extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.LINE_END);
 
+        jPanel2.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel2.setForeground(new java.awt.Color(153, 153, 153));
         jPanel2.setLayout(new java.awt.BorderLayout());
 
+        jPanel13.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel13.setForeground(new java.awt.Color(153, 153, 153));
         jPanel13.setLayout(new java.awt.BorderLayout());
 
+        jPanel14.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel14.setForeground(new java.awt.Color(153, 153, 153));
         jPanel14.setLayout(new java.awt.BorderLayout());
 
+        jLabel31.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel31.setForeground(new java.awt.Color(153, 153, 153));
         jLabel31.setText(" ");
         jPanel14.add(jLabel31, java.awt.BorderLayout.PAGE_START);
 
+        jLabel32.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel32.setForeground(new java.awt.Color(153, 153, 153));
         jLabel32.setText(" ");
         jPanel14.add(jLabel32, java.awt.BorderLayout.PAGE_END);
 
+        jLabel33.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel33.setForeground(new java.awt.Color(153, 153, 153));
         jLabel33.setText("          ");
         jPanel14.add(jLabel33, java.awt.BorderLayout.LINE_END);
 
+        jLabel34.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel34.setForeground(new java.awt.Color(153, 153, 153));
         jLabel34.setText("          ");
         jPanel14.add(jLabel34, java.awt.BorderLayout.LINE_START);
 
+        jPanel38.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel38.setForeground(new java.awt.Color(153, 153, 153));
         jPanel38.setLayout(new java.awt.GridLayout(1, 4));
 
+        facturar.setBackground(new java.awt.Color(0, 0, 0));
+        facturar.setFont(new java.awt.Font("Courier 10 Pitch", 1, 12)); // NOI18N
+        facturar.setForeground(new java.awt.Color(153, 153, 153));
         facturar.setText("Agregar Existencias");
         jPanel38.add(facturar);
 
+        jButton14.setBackground(new java.awt.Color(0, 0, 0));
+        jButton14.setFont(new java.awt.Font("Courier 10 Pitch", 1, 12)); // NOI18N
+        jButton14.setForeground(new java.awt.Color(153, 153, 153));
         jButton14.setText("Agregar Nuevo Producto");
         jPanel38.add(jButton14);
 
+        jButton13.setBackground(new java.awt.Color(0, 0, 0));
+        jButton13.setFont(new java.awt.Font("Courier 10 Pitch", 1, 12)); // NOI18N
+        jButton13.setForeground(new java.awt.Color(153, 153, 153));
         jButton13.setText("Editar Información");
         jPanel38.add(jButton13);
+
+        jPanel46.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel46.setForeground(new java.awt.Color(153, 153, 153));
 
         javax.swing.GroupLayout jPanel46Layout = new javax.swing.GroupLayout(jPanel46);
         jPanel46.setLayout(jPanel46Layout);
         jPanel46Layout.setHorizontalGroup(
             jPanel46Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 166, Short.MAX_VALUE)
+            .addGap(0, 151, Short.MAX_VALUE)
         );
         jPanel46Layout.setVerticalGroup(
             jPanel46Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -422,9 +591,13 @@ public class Bodega extends javax.swing.JFrame {
 
         jPanel13.add(jPanel14, java.awt.BorderLayout.PAGE_END);
 
+        jLabel30.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel30.setForeground(new java.awt.Color(153, 153, 153));
         jLabel30.setText(" ");
         jPanel13.add(jLabel30, java.awt.BorderLayout.PAGE_START);
 
+        jTable2.setBackground(new java.awt.Color(0, 0, 0));
+        jTable2.setFont(new java.awt.Font("Courier 10 Pitch", 1, 12)); // NOI18N
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -484,7 +657,6 @@ public class Bodega extends javax.swing.JFrame {
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
