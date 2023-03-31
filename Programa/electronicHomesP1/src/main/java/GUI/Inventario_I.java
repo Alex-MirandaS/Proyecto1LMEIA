@@ -155,6 +155,7 @@ public class Inventario_I extends javax.swing.JFrame {
         nomEmpleado = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Inventario");
 
         jPanel1.setLayout(new java.awt.BorderLayout());
 
@@ -718,7 +719,7 @@ public class Inventario_I extends javax.swing.JFrame {
     }//GEN-LAST:event_agProductActionPerformed
 
     private void cargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cargarActionPerformed
-        // TODO add your handling code here:
+       p.getCtrlInve().addRequest();
     }//GEN-LAST:event_cargarActionPerformed
 
     public JLabel getCodEmpleado() {

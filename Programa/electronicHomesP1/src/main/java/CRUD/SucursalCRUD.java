@@ -61,7 +61,7 @@ public class SucursalCRUD extends ModelCRUD {
 
     @Override
     public Object getData(String id) {
-        String consult = this.selectTQ + this.table + this.whereQ + "codigo_id = " + "'"+id+"'";
+        String consult = this.selectTQ + this.table + this.whereQ + "codigo_id = " + "'" + id + "'";
         Object returned = null;
 
         try ( PreparedStatement presSt = Conexion.dbConection.prepareStatement(consult)) {
@@ -75,9 +75,9 @@ public class SucursalCRUD extends ModelCRUD {
         }
         return returned;
     }
-    
-        public Object getDataName(String id) {
-        String consult = this.selectTQ + this.table + this.whereQ + "nombre = " + "'"+id+"'";
+
+    public Object getDataName(String id) {
+        String consult = this.selectTQ + this.table + this.whereQ + "nombre = " + "'" + id + "'";
         Object returned = null;
 
         try ( PreparedStatement presSt = Conexion.dbConection.prepareStatement(consult)) {

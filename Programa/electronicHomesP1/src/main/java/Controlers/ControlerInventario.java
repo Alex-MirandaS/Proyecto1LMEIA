@@ -6,11 +6,15 @@ package Controlers;
 
 import GUI.Inventario_I;
 import Objects.Empleado;
+import Objects.Inventario;
 import Objects.Producto;
 import Objects.Sucursal;
 import Program.Principal;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.SpinnerNumberModel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -32,14 +36,55 @@ public class ControlerInventario {
         ventana.getCodEmpleado().setText(e.getCod_empleado());
         ventana.getNomEmpleado().setText(e.getNombre());
         fillSucursals(e.getCod_sucursal());
+        changeTable();
+    }
+
+    private void changeTable() {
+        JTable table = ventana.getTable();
+        DefaultTableModel modelo = new DefaultTableModel();
+        table.setModel(modelo);
+        modelo.addColumn("SKU");
+        modelo.addColumn("Nombre del Producto");
+        modelo.addColumn("Sucursal Origen");
+        modelo.addColumn("Existencias Sucursal Origen");
+        modelo.addColumn("Cantidad Solicitada");
+        modelo.fireTableDataChanged();
+        p.getVendedorGUI().getTable().setEnabled(false);
+        table.setVisible(true);
     }
 
     public void updateProducts() {
         ventana.getListProductos().removeAllItems();
-        ArrayList<Object> a = p.getInvCRUD().getProdSuc(ventana.getCodSucursal().getText());
-        for (int i = 0; i < a.size(); i++) {
-            Producto product = (Producto) a.get(i);
-            ventana.getListProductos().addItem(product.getNombre());
+        if (ventana.getList_sucursales().getSelectedItem() != null) {
+            ArrayList<Object> a = p.getInvCRUD().getProdSuc(((Sucursal) p.getSucCRUD().getDataName("" + ventana.getList_sucursales().getSelectedItem())).getCodigo_id());
+            for (int i = 0; i < a.size(); i++) {
+                Producto product = (Producto) a.get(i);
+                ventana.getListProductos().addItem(product.getNombre());
+            }
+        }
+    }
+
+    public void addRequest() {//REVISAR SI HAY EXISTENCIAS
+        JTable table = ventana.getTable();
+        DefaultTableModel modelo = (DefaultTableModel) table.getModel();
+
+        if (!ventana.getCodProd().getText().isBlank()) {
+            if (!("" + ventana.getCantidad().getValue()).isBlank() && !((Integer.parseInt("" + ventana.getCantidad().getValue())) < 1)) {
+                try {
+                    Producto pro = (Producto) p.getProCRUD().getData(ventana.getCodProd().getText());
+                    String sucOrigen = ""+ventana.getList_sucursales().getSelectedItem();
+                    Inventario inv = p.getInvCRUD().getRegInv(pro.getSku(), sucOrigen);
+                    String cant = ""+ventana.getCantidad().getValue();
+                    modelo.addRow(new Object[]{pro.getSku(),pro.getNombre(), sucOrigen, inv.getCantidad(), cant});
+                    modelo.fireTableDataChanged();
+                    table.setVisible(true);
+                } catch (Exception e) {
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "No ha ingresado la cantidad de productos aún");
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "No ha ingresado ningun código aún");
         }
     }
 
